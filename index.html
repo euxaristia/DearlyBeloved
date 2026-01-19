@@ -10,6 +10,21 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
         <title>Common Prayer - Daily Office</title>
+        <script>
+            // Apply theme immediately to prevent flash
+            (function () {
+                const savedTheme = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                if (
+                    savedTheme === "dark" ||
+                    (savedTheme === null && prefersDark)
+                ) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            })();
+        </script>
         <link rel="stylesheet" href="styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
