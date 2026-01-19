@@ -1,12 +1,13 @@
 :root {
-    --primary-bg: #fdfcf9;
-    --secondary-bg: #f5f3ed;
-    --text-primary: #2c2c2c;
-    --text-secondary: #5a5a5a;
-    --rubric-color: #b22222;
-    --accent-color: #8b4513;
+    --primary-bg: #f4f1e8;
+    --secondary-bg: #ebe6d9;
+    --text-primary: #3a3a3a;
+    --text-secondary: #6b6b6b;
+    --rubric-color: #a94442;
+    --accent-color: #8b6914;
     --border-color: #d4cfc4;
-    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow: rgba(0, 0, 0, 0.08);
+    --page-color: #faf8f3;
 }
 
 * {
@@ -100,7 +101,7 @@ header h1 {
 
 main {
     padding: 20px;
-    background-color: white;
+    background-color: var(--page-color);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 2px 8px var(--shadow);
