@@ -170,6 +170,15 @@ main {
     padding-bottom: 10px;
 }
 
+.section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
 .rubric {
     color: var(--rubric-color);
     font-style: italic;
