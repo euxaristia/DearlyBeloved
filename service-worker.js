@@ -1,10 +1,11 @@
 const CACHE_NAME = "common-prayer-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/manifest.json",
+  "/PrexCommunis/",
+  "/PrexCommunis/index.html",
+  "/PrexCommunis/styles.css",
+  "/PrexCommunis/app.js",
+  "/PrexCommunis/manifest.json",
+  "/PrexCommunis/icon.svg",
 ];
 
 // Install service worker and cache resources
@@ -56,7 +57,7 @@ self.addEventListener("notificationclick", (event) => {
         }
         // Otherwise open a new window
         if (clients.openWindow) {
-          return clients.openWindow("/");
+          return clients.openWindow("/PrexCommunis/");
         }
       }),
   );

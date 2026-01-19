@@ -2,14 +2,15 @@
   "name": "Common Prayer - Daily Office",
   "short_name": "Common Prayer",
   "description": "Daily Office prayers from the Book of Common Prayer",
-  "start_url": "/",
+  "start_url": "/PrexCommunis/",
+  "scope": "/PrexCommunis/",
   "display": "standalone",
   "background_color": "#f4f1e8",
   "theme_color": "#8b6914",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "/PrexCommunis/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

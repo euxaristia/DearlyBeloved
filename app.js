@@ -1073,8 +1073,8 @@ function showNotification(title, office) {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification(`Time for ${title}`, {
         body: "Open Common Prayer to pray the Daily Office.",
-        icon: "/icon.svg",
-        badge: "/icon.svg",
+        icon: "/PrexCommunis/icon.svg",
+        badge: "/PrexCommunis/icon.svg",
         tag: office,
         requireInteraction: false,
         vibrate: [200, 100, 200],
@@ -1086,7 +1086,7 @@ function showNotification(title, office) {
 // Register service worker
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/service-worker.js")
+    .register("/PrexCommunis/service-worker.js")
     .then((registration) => {
       console.log("Service Worker registered:", registration);
     })
