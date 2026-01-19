@@ -127,6 +127,22 @@ html[data-initial-office="compline"] .nav-btn[data-office="compline"] {
 #liturgical-date {
     font-size: 1.1rem;
     color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.liturgical-season {
+    display: inline-block;
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.saint-day {
+    display: inline-block;
+    color: var(--rubric-color);
+    font-weight: 500;
+    margin-top: 5px;
 }
 
 main {

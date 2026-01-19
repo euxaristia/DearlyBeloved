@@ -898,6 +898,237 @@ function updateActiveButton(office) {
   });
 }
 
+// Liturgical Calendar Database
+const saintsCalendar = {
+  "1-1": "The Circumcision of Christ",
+  "1-6": "The Epiphany of our Lord Jesus Christ",
+  "1-18": "The Confession of Saint Peter the Apostle",
+  "1-19": "Henry, Missionary, Bishop in Finland, 1150",
+  "1-25": "The Conversion of Saint Paul the Apostle",
+  "2-2": "The Presentation of Christ in the Temple",
+  "2-14": "Saint Valentine, Martyr at Rome, c. 269",
+  "2-24": "Saint Matthias the Apostle",
+  "3-19": "Saint Joseph, Spouse of the Blessed Virgin Mary",
+  "3-25": "The Annunciation of the Blessed Virgin Mary",
+  "4-25": "Saint Mark the Evangelist",
+  "5-1": "Saint Philip and Saint James, Apostles",
+  "5-31": "The Visitation of the Blessed Virgin Mary",
+  "6-11": "Saint Barnabas the Apostle",
+  "6-24": "The Nativity of Saint John the Baptist",
+  "6-29": "Saint Peter and Saint Paul, Apostles",
+  "7-22": "Saint Mary Magdalene",
+  "7-25": "Saint James the Apostle",
+  "8-6": "The Transfiguration of Our Lord Jesus Christ",
+  "8-15": "Saint Mary the Virgin, Mother of Our Lord Jesus Christ",
+  "8-24": "Saint Bartholomew the Apostle",
+  "9-14": "Holy Cross Day",
+  "9-21": "Saint Matthew, Apostle and Evangelist",
+  "9-29": "Saint Michael and All Angels",
+  "10-18": "Saint Luke the Evangelist",
+  "10-28": "Saint Simon and Saint Jude, Apostles",
+  "11-1": "All Saints' Day",
+  "11-2": "All Souls' Day",
+  "11-30": "Saint Andrew the Apostle",
+  "12-21": "Saint Thomas the Apostle",
+  "12-25": "The Nativity of Our Lord Jesus Christ",
+  "12-26": "Saint Stephen, Deacon and Martyr",
+  "12-27": "Saint John, Apostle and Evangelist",
+  "12-28": "The Holy Innocents"
+};
+
+// Calculate Easter Sunday using Computus algorithm
+function calculateEaster(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(year, month - 1, day);
+}
+
+// Get days between two dates
+function daysBetween(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000;
+  return Math.round((date2 - date1) / oneDay);
+}
+
+// Get liturgical season information
+function getLiturgicalInfo(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  // Check for fixed feast days first
+  const dateKey = `${month}-${day}`;
+  const saintDay = saintsCalendar[dateKey];
+
+  // Calculate Easter and related dates
+  const easter = calculateEaster(year);
+  const ashWednesday = new Date(easter);
+  ashWednesday.setDate(easter.getDate() - 46);
+  const pentecost = new Date(easter);
+  pentecost.setDate(easter.getDate() + 49);
+  const adventStart = getAdventStart(year);
+  const christmasDay = new Date(year, 11, 25);
+  const epiphany = new Date(year, 0, 6);
+  const baptismOfLord = getBaptismOfLord(year);
+  const trinitySunday = new Date(pentecost);
+  trinitySunday.setDate(pentecost.getDate() + 7);
+
+  let season = "";
+  let weekInfo = "";
+
+  // Determine liturgical season
+  if (date >= adventStart && date < christmasDay) {
+    season = "Advent";
+    const sundaysBefore = Math.floor(daysBetween(adventStart, date) / 7);
+    const adventWeek = Math.min(sundaysBefore + 1, 4);
+    weekInfo = getSundayReference(date, adventStart, `the ${getOrdinal(adventWeek)} Sunday of Advent`);
+  } else if (date >= christmasDay && date < epiphany) {
+    season = "Christmastide";
+    if (month === 12 && day === 25) {
+      weekInfo = "Christmas Day";
+    } else {
+      weekInfo = getSundayReference(date, christmasDay, "Christmas Day");
+    }
+  } else if (date >= epiphany && date < baptismOfLord) {
+    season = "Epiphany";
+    weekInfo = getSundayReference(date, epiphany, "the Epiphany");
+  } else if (date >= baptismOfLord && date < ashWednesday) {
+    season = "after Epiphany";
+    const epiphanySundays = getSundaysBetween(baptismOfLord, ashWednesday);
+    const currentSunday = getSundayNumber(baptismOfLord, date, ashWednesday);
+    if (currentSunday > 0) {
+      weekInfo = getSundayReference(date, null, `the ${getOrdinal(currentSunday)} Sunday after Epiphany`);
+    } else {
+      weekInfo = getSundayReference(date, baptismOfLord, "the Baptism of Our Lord");
+    }
+  } else if (date >= ashWednesday && date < easter) {
+    season = "Lent";
+    if (daysBetween(ashWednesday, date) === 0) {
+      weekInfo = "Ash Wednesday";
+    } else {
+      const sundaysBefore = getSundayNumber(ashWednesday, date, easter);
+      weekInfo = getSundayReference(date, ashWednesday, `the ${getOrdinal(sundaysBefore)} Sunday in Lent`);
+    }
+  } else if (date >= easter && date < pentecost) {
+    season = "Eastertide";
+    if (daysBetween(easter, date) === 0) {
+      weekInfo = "Easter Day";
+    } else {
+      const sundaysBefore = Math.floor(daysBetween(easter, date) / 7);
+      weekInfo = getSundayReference(date, easter, `the ${getOrdinal(sundaysBefore + 1)} Sunday of Easter`);
+    }
+  } else if (date >= pentecost && date < trinitySunday) {
+    season = "Pentecost";
+    weekInfo = "Pentecost";
+  } else if (date >= trinitySunday) {
+    season = "after Trinity";
+    const nextAdvent = getAdventStart(year + 1);
+    // Check if we're past this year's Advent
+    if (date < getAdventStart(year)) {
+      const sundayNumber = getSundayNumber(trinitySunday, date, getAdventStart(year));
+      weekInfo = getSundayReference(date, trinitySunday, `the ${getOrdinal(sundayNumber)} Sunday after Trinity`);
+    } else {
+      // We're in next year's Advent season
+      const adventStart = getAdventStart(year);
+      const sundaysBefore = Math.floor(daysBetween(adventStart, date) / 7);
+      const adventWeek = Math.min(sundaysBefore + 1, 4);
+      weekInfo = getSundayReference(date, adventStart, `the ${getOrdinal(adventWeek)} Sunday of Advent`);
+    }
+  }
+
+  return { season, weekInfo, saintDay };
+}
+
+// Get the Sunday reference based on current day
+function getSundayReference(date, referenceDate, sundayName) {
+  const dayOfWeek = date.getDay();
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  if (dayOfWeek === 0) {
+    return sundayName;
+  } else {
+    return `${daysOfWeek[dayOfWeek]} after ${sundayName}`;
+  }
+}
+
+// Get Sunday number in a season
+function getSundayNumber(seasonStart, currentDate, seasonEnd) {
+  let sundayCount = 0;
+  let checkDate = new Date(seasonStart);
+
+  // Find first Sunday
+  while (checkDate.getDay() !== 0) {
+    checkDate.setDate(checkDate.getDate() + 1);
+  }
+
+  // Count Sundays until current date
+  while (checkDate <= currentDate && checkDate < seasonEnd) {
+    if (checkDate <= currentDate) {
+      sundayCount++;
+    }
+    checkDate.setDate(checkDate.getDate() + 7);
+  }
+
+  return sundayCount;
+}
+
+// Get number of Sundays between two dates
+function getSundaysBetween(startDate, endDate) {
+  let count = 0;
+  let checkDate = new Date(startDate);
+
+  while (checkDate < endDate) {
+    if (checkDate.getDay() === 0) {
+      count++;
+    }
+    checkDate.setDate(checkDate.getDate() + 1);
+  }
+
+  return count;
+}
+
+// Get first Sunday of Advent
+function getAdventStart(year) {
+  const christmas = new Date(year, 11, 25);
+  const daysUntilSunday = christmas.getDay() === 0 ? 7 : christmas.getDay();
+  const advent4 = new Date(christmas);
+  advent4.setDate(christmas.getDate() - daysUntilSunday);
+  const advent1 = new Date(advent4);
+  advent1.setDate(advent4.getDate() - 21);
+  return advent1;
+}
+
+// Get Baptism of the Lord (first Sunday after January 6)
+function getBaptismOfLord(year) {
+  const epiphany = new Date(year, 0, 6);
+  const baptism = new Date(epiphany);
+
+  // Find next Sunday after Epiphany
+  const daysUntilSunday = epiphany.getDay() === 0 ? 7 : (7 - epiphany.getDay());
+  baptism.setDate(epiphany.getDate() + daysUntilSunday);
+
+  return baptism;
+}
+
+// Get ordinal number string
+function getOrdinal(num) {
+  const ordinals = ["", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
+                   "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth",
+                   "Eighteenth", "Nineteenth", "Twentieth", "Twenty-first", "Twenty-second", "Twenty-third", "Twenty-fourth"];
+  return ordinals[num] || `${num}th`;
+}
+
 // Update liturgical date display
 function updateDate() {
   const now = new Date();
@@ -908,7 +1139,21 @@ function updateDate() {
     day: "numeric",
   };
   const dateString = now.toLocaleDateString("en-US", options);
-  document.getElementById("liturgical-date").textContent = dateString;
+
+  // Get liturgical information
+  const liturgicalInfo = getLiturgicalInfo(now);
+
+  let liturgicalText = dateString;
+
+  if (liturgicalInfo.weekInfo) {
+    liturgicalText += `<br><span class="liturgical-season">${liturgicalInfo.weekInfo}</span>`;
+  }
+
+  if (liturgicalInfo.saintDay) {
+    liturgicalText += `<br><span class="saint-day">${liturgicalInfo.saintDay}</span>`;
+  }
+
+  document.getElementById("liturgical-date").innerHTML = liturgicalText;
 }
 
 // Render prayer content
