@@ -193,6 +193,10 @@ main {
     word-wrap: break-word;
 }
 
+.prayer-text em {
+    margin-right: 0.5em;
+}
+
 .versicle {
     margin: 10px 0;
     display: grid;
