@@ -931,6 +931,9 @@ function setupEventListeners() {
 
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      // Remove the data-initial-office attribute to prevent CSS conflict
+      document.documentElement.removeAttribute("data-initial-office");
+
       // Remove active class from all buttons
       navButtons.forEach((btn) => btn.classList.remove("active"));
 
