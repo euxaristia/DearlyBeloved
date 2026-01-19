@@ -340,11 +340,11 @@ body.dark-mode .moon-icon {
 
 @media (max-width: 767px) {
     body {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .app-container {
