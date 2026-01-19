@@ -1,11 +1,11 @@
 // Prayer content data
 const prayerData = {
-    morning: {
-        title: "Morning Prayer",
-        sections: [
-            {
-                type: "opening",
-                content: `<div class="section">
+  morning: {
+    title: "Morning Prayer",
+    sections: [
+      {
+        type: "opening",
+        content: `<div class="section">
                     <p class="rubric">The Officiant begins with one or more of the following sentences of Scripture.</p>
                     <p class="prayer-text">"The Lord is in his holy temple; let all the earth keep silence before him." <span class="rubric">Habakkuk 2:20</span></p>
 
@@ -30,11 +30,11 @@ const prayerData = {
 
                     <p class="rubric">The Priest alone stands and says</p>
                     <p class="prayer-text">The Almighty and merciful Lord grant you absolution and remission of all your sins, true repentance, amendment of life, and the grace and consolation of his Holy Spirit. <span class="response">Amen.</span></p>
-                </div>`
-            },
-            {
-                type: "invitatory",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "invitatory",
+        content: `<div class="section">
                     <p class="rubric">All stand, the Officiant and People say together</p>
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
@@ -59,11 +59,11 @@ const prayerData = {
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         <p class="rubric">Alleluia.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "venite",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "venite",
+        content: `<div class="section">
                     <div class="canticle">
                         <h3 class="canticle-title">Venite, exultemus Domino</h3>
                         <p class="rubric">Psalm 95:1-7</p>
@@ -90,11 +90,11 @@ const prayerData = {
                             <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                type: "psalm",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "psalm",
+        content: `<div class="section">
                     <p class="rubric">Then follows the Psalm or Psalms appointed.</p>
                     <div class="psalm">
                         <h3 class="psalm-title">Psalm 1</h3>
@@ -110,11 +110,11 @@ const prayerData = {
                         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "readings",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "readings",
+        content: `<div class="section">
                     <p class="rubric">The Lessons are read, the Reader first saying</p>
                     <div class="reading">
                         <p class="reading-citation">The First Lesson is written in the _____ chapter of _____, beginning at the _____ verse.</p>
@@ -122,11 +122,11 @@ const prayerData = {
                         <p class="prayer-text">The Word of the Lord.</p>
                         <p class="prayer-text response">Thanks be to God.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "te-deum",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "te-deum",
+        content: `<div class="section">
                     <div class="canticle">
                         <h3 class="canticle-title">Te Deum laudamus</h3>
                         <p class="rubric">We praise thee, O God</p>
@@ -161,11 +161,11 @@ const prayerData = {
                             in glory everlasting.
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "creed",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "creed",
+        content: `<div class="section">
                     <p class="rubric">Then shall be said the Apostles' Creed by the Officiant and People, standing.</p>
                     <p class="prayer-text response">
                         I believe in God, the Father almighty,<br>
@@ -189,11 +189,11 @@ const prayerData = {
                         the resurrection of the body,<br>
                         and the life everlasting. Amen.
                     </p>
-                </div>`
-            },
-            {
-                type: "prayers",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "prayers",
+        content: `<div class="section">
                     <p class="rubric">The people kneel. The Officiant says to the people</p>
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
@@ -276,11 +276,11 @@ const prayerData = {
                         <span class="versicle-label">R.</span>
                         <span class="response">And take not thy Holy Spirit from us.</span>
                     </div>
-                </div>`
-            },
-            {
-                type: "collects",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "collects",
+        content: `<div class="section">
                     <div class="collect">
                         <p class="collect-title">The Collect of the Day</p>
                         <p class="prayer-text">
@@ -301,26 +301,26 @@ const prayerData = {
                             O Lord, our heavenly Father, almighty and everlasting God, who hast safely brought us to the beginning of this day: Defend us in the same with thy mighty power; and grant that this day we fall into no sin, neither run into any kind of danger; but that all our doings, being ordered by thy governance, may be righteous in thy sight; through Jesus Christ our Lord. <span class="response">Amen.</span>
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "closing",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "closing",
+        content: `<div class="section">
                     <p class="rubric">The Officiant may end Morning Prayer with the following</p>
                     <p class="prayer-text">
                         The grace of our Lord Jesus Christ, and the love of God, and the fellowship of the Holy Ghost, be with us all evermore. <span class="response">Amen.</span>
                     </p>
                     <p class="rubric">2 Corinthians 13:14</p>
-                </div>`
-            }
-        ]
-    },
-    evening: {
-        title: "Evening Prayer",
-        sections: [
-            {
-                type: "opening",
-                content: `<div class="section">
+                </div>`,
+      },
+    ],
+  },
+  evening: {
+    title: "Evening Prayer",
+    sections: [
+      {
+        type: "opening",
+        content: `<div class="section">
                     <p class="rubric">The Officiant begins with one or more of the following sentences of Scripture.</p>
                     <p class="prayer-text">"Let my prayer be set forth in thy sight as the incense, and let the lifting up of my hands be an evening sacrifice." <span class="rubric">Psalm 141:2</span></p>
 
@@ -345,11 +345,11 @@ const prayerData = {
 
                     <p class="rubric">The Priest alone stands and says</p>
                     <p class="prayer-text">The Almighty and merciful Lord grant you absolution and remission of all your sins, true repentance, amendment of life, and the grace and consolation of his Holy Spirit. <span class="response">Amen.</span></p>
-                </div>`
-            },
-            {
-                type: "invitatory",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "invitatory",
+        content: `<div class="section">
                     <p class="rubric">All stand, the Officiant and People say together</p>
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
@@ -365,11 +365,11 @@ const prayerData = {
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         <p class="rubric">Alleluia.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "psalm",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "psalm",
+        content: `<div class="section">
                     <p class="rubric">Then follows the Psalm or Psalms appointed.</p>
                     <div class="psalm">
                         <h3 class="psalm-title">Psalm 4</h3>
@@ -387,11 +387,11 @@ const prayerData = {
                         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "readings",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "readings",
+        content: `<div class="section">
                     <p class="rubric">The Lessons are read, the Reader first saying</p>
                     <div class="reading">
                         <p class="reading-citation">The First Lesson is written in the _____ chapter of _____, beginning at the _____ verse.</p>
@@ -399,11 +399,11 @@ const prayerData = {
                         <p class="prayer-text">The Word of the Lord.</p>
                         <p class="prayer-text response">Thanks be to God.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "magnificat",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "magnificat",
+        content: `<div class="section">
                     <div class="canticle">
                         <h3 class="canticle-title">Magnificat</h3>
                         <p class="rubric">The Song of Mary - Luke 1:46-55</p>
@@ -430,11 +430,11 @@ const prayerData = {
                             <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                type: "creed",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "creed",
+        content: `<div class="section">
                     <p class="rubric">Then shall be said the Apostles' Creed by the Officiant and People, standing.</p>
                     <p class="prayer-text response">
                         I believe in God, the Father almighty,<br>
@@ -458,11 +458,11 @@ const prayerData = {
                         the resurrection of the body,<br>
                         and the life everlasting. Amen.
                     </p>
-                </div>`
-            },
-            {
-                type: "prayers",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "prayers",
+        content: `<div class="section">
                     <p class="rubric">The people kneel. The Officiant says to the people</p>
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
@@ -545,11 +545,11 @@ const prayerData = {
                         <span class="versicle-label">R.</span>
                         <span class="response">And take not thy Holy Spirit from us.</span>
                     </div>
-                </div>`
-            },
-            {
-                type: "collects",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "collects",
+        content: `<div class="section">
                     <div class="collect">
                         <p class="collect-title">The Collect of the Day</p>
                         <p class="prayer-text">
@@ -570,11 +570,11 @@ const prayerData = {
                             O God, from whom all holy desires, all good counsels, and all just works do proceed: Give unto thy servants that peace which the world cannot give, that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. <span class="response">Amen.</span>
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "nunc-dimittis",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "nunc-dimittis",
+        content: `<div class="section">
                     <div class="canticle">
                         <h3 class="canticle-title">Nunc Dimittis</h3>
                         <p class="rubric">The Song of Simeon - Luke 2:29-32</p>
@@ -591,26 +591,26 @@ const prayerData = {
                             <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                type: "closing",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "closing",
+        content: `<div class="section">
                     <p class="rubric">The Officiant may end Evening Prayer with the following</p>
                     <p class="prayer-text">
                         The grace of our Lord Jesus Christ, and the love of God, and the fellowship of the Holy Ghost, be with us all evermore. <span class="response">Amen.</span>
                     </p>
                     <p class="rubric">2 Corinthians 13:14</p>
-                </div>`
-            }
-        ]
-    },
-    midday: {
-        title: "Midday Prayer",
-        sections: [
-            {
-                type: "opening",
-                content: `<div class="section">
+                </div>`,
+      },
+    ],
+  },
+  midday: {
+    title: "Midday Prayer",
+    sections: [
+      {
+        type: "opening",
+        content: `<div class="section">
                     <p class="rubric">The Officiant begins</p>
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
@@ -626,11 +626,11 @@ const prayerData = {
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         <p class="rubric">Alleluia.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "psalm",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "psalm",
+        content: `<div class="section">
                     <div class="psalm">
                         <h3 class="psalm-title">Psalm 119:105-112</h3>
                         <p class="psalm-verse"><span class="verse-number">105</span> Thy word is a lantern unto my feet, and a light unto my paths.</p>
@@ -646,11 +646,11 @@ const prayerData = {
                         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "prayers",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "prayers",
+        content: `<div class="section">
                     <p class="rubric">Officiant and People</p>
                     <p class="prayer-text response">
                         Our Father, who art in heaven,<br>
@@ -673,25 +673,25 @@ const prayerData = {
                             Blessed Savior, at this hour thou didst hang upon the cross, stretching out thy loving arms: Grant that all the peoples of the earth may look unto thee and be saved; for thy tender mercies' sake. <span class="response">Amen.</span>
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "closing",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "closing",
+        content: `<div class="section">
                     <p class="prayer-text">
                         Let us bless the Lord.<br>
                         <span class="response">Thanks be to God.</span>
                     </p>
-                </div>`
-            }
-        ]
-    },
-    compline: {
-        title: "Compline",
-        sections: [
-            {
-                type: "opening",
-                content: `<div class="section">
+                </div>`,
+      },
+    ],
+  },
+  compline: {
+    title: "Compline",
+    sections: [
+      {
+        type: "opening",
+        content: `<div class="section">
                     <p class="rubric">The Officiant begins</p>
                     <p class="prayer-text">The Lord Almighty grant us a peaceful night and a perfect end. <span class="response">Amen.</span></p>
 
@@ -717,11 +717,11 @@ const prayerData = {
 
                     <p class="rubric">The Officiant alone says</p>
                     <p class="prayer-text">May Almighty God grant us forgiveness of all our sins, and the grace and comfort of the Holy Spirit. <span class="response">Amen.</span></p>
-                </div>`
-            },
-            {
-                type: "invitatory",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "invitatory",
+        content: `<div class="section">
                     <div class="versicle">
                         <span class="versicle-label">V.</span>
                         <span>O God, make speed to save us.</span>
@@ -736,11 +736,11 @@ const prayerData = {
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         <p class="rubric">Alleluia.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "psalm",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "psalm",
+        content: `<div class="section">
                     <div class="psalm">
                         <h3 class="psalm-title">Psalm 4</h3>
                         <p class="psalm-verse"><span class="verse-number">1</span> Hear me when I call, O God of my righteousness; thou hast set me at liberty when I was in trouble; have mercy upon me, and hearken unto my prayer.</p>
@@ -750,11 +750,11 @@ const prayerData = {
                         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                         <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                     </div>
-                </div>`
-            },
-            {
-                type: "readings",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "readings",
+        content: `<div class="section">
                     <p class="rubric">One or more of the following, or some other suitable passage of Scripture, is read.</p>
                     <div class="reading">
                         <p class="prayer-text">Thou, O Lord, art in the midst of us, and we are called by thy Name; leave us not, O Lord our God. <span class="rubric">Jeremiah 14:9</span></p>
@@ -765,11 +765,11 @@ const prayerData = {
                             <span class="response">And grant us thy salvation.</span>
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "nunc-dimittis",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "nunc-dimittis",
+        content: `<div class="section">
                     <div class="canticle">
                         <h3 class="canticle-title">Nunc Dimittis</h3>
                         <p class="rubric">The Song of Simeon - Luke 2:29-32</p>
@@ -786,11 +786,11 @@ const prayerData = {
                             <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                type: "prayers",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "prayers",
+        content: `<div class="section">
                     <p class="rubric">Officiant: Let us pray.</p>
 
                     <p class="rubric">Officiant and People</p>
@@ -815,87 +815,133 @@ const prayerData = {
                         <span class="versicle-label">R.</span>
                         <span class="response">And let our cry come unto thee.</span>
                     </div>
-                </div>`
-            },
-            {
-                type: "collects",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "collects",
+        content: `<div class="section">
                     <div class="collect">
                         <p class="prayer-text">
                             Visit this place, O Lord, and drive far from it all snares of the enemy; let thy holy angels dwell with us to preserve us in peace; and let thy blessing be upon us always; through Jesus Christ our Lord. <span class="response">Amen.</span>
                         </p>
                     </div>
-                </div>`
-            },
-            {
-                type: "closing",
-                content: `<div class="section">
+                </div>`,
+      },
+      {
+        type: "closing",
+        content: `<div class="section">
                     <p class="rubric">The Officiant concludes</p>
                     <p class="prayer-text">
                         The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. <span class="response">Amen.</span>
                     </p>
-                </div>`
-            }
-        ]
-    }
+                </div>`,
+      },
+    ],
+  },
 };
 
 // Application state
-let currentOffice = 'morning';
+let currentOffice = "morning";
+
+// Determine which office to pray based on time of day
+function getAppropriateOffice() {
+  const now = new Date();
+  const hour = now.getHours();
+
+  // Morning Prayer: 5 AM - 11 AM
+  if (hour >= 5 && hour < 11) {
+    return "morning";
+  }
+  // Midday Prayer: 11 AM - 2 PM
+  else if (hour >= 11 && hour < 14) {
+    return "midday";
+  }
+  // Evening Prayer: 2 PM - 8 PM
+  else if (hour >= 14 && hour < 20) {
+    return "evening";
+  }
+  // Compline: 8 PM - 5 AM
+  else {
+    return "compline";
+  }
+}
 
 // Initialize the app
 function init() {
-    updateDate();
-    renderPrayer(currentOffice);
-    setupEventListeners();
+  // Set the appropriate office based on current time
+  currentOffice = getAppropriateOffice();
 
-    // Update date every minute
-    setInterval(updateDate, 60000);
+  updateDate();
+  renderPrayer(currentOffice);
+  setupEventListeners();
+
+  // Set active button based on current office
+  updateActiveButton(currentOffice);
+
+  // Update date every minute
+  setInterval(updateDate, 60000);
+}
+
+// Update active button state
+function updateActiveButton(office) {
+  const navButtons = document.querySelectorAll(".nav-btn");
+  navButtons.forEach((btn) => {
+    if (btn.dataset.office === office) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
 }
 
 // Update liturgical date display
 function updateDate() {
-    const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateString = now.toLocaleDateString('en-US', options);
-    document.getElementById('liturgical-date').textContent = dateString;
+  const now = new Date();
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const dateString = now.toLocaleDateString("en-US", options);
+  document.getElementById("liturgical-date").textContent = dateString;
 }
 
 // Render prayer content
 function renderPrayer(office) {
-    const prayer = prayerData[office];
-    const contentDiv = document.getElementById('prayer-content');
+  const prayer = prayerData[office];
+  const contentDiv = document.getElementById("prayer-content");
 
-    let html = `<h2 class="section-title">${prayer.title}</h2>`;
+  let html = `<h2 class="section-title">${prayer.title}</h2>`;
 
-    prayer.sections.forEach(section => {
-        html += section.content;
-    });
+  prayer.sections.forEach((section) => {
+    html += section.content;
+  });
 
-    contentDiv.innerHTML = html;
+  contentDiv.innerHTML = html;
 }
 
 // Setup event listeners
 function setupEventListeners() {
-    const navButtons = document.querySelectorAll('.nav-btn');
+  const navButtons = document.querySelectorAll(".nav-btn");
 
-    navButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            navButtons.forEach(btn => btn.classList.remove('active'));
+  navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons
+      navButtons.forEach((btn) => btn.classList.remove("active"));
 
-            // Add active class to clicked button
-            button.classList.add('active');
+      // Add active class to clicked button
+      button.classList.add("active");
 
-            // Get office type and render
-            currentOffice = button.dataset.office;
-            renderPrayer(currentOffice);
+      // Get office type and render
+      currentOffice = button.dataset.office;
+      renderPrayer(currentOffice);
 
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  });
 }
 
 // Start the app when DOM is loaded
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded", init);
