@@ -614,82 +614,34 @@ const prayerData = {
     ],
   },
   midday: {
-    title: "Midday Prayer",
+    title: "Prayers at Mid-Day",
     sections: [
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">The Officiant begins</p>
-                    <div class="versicle">
-                        <span class="versicle-label">V.</span>
-                        <span>O God, make speed to save us.</span>
-                    </div>
-                    <div class="versicle">
-                        <span class="versicle-label">R.</span>
-                        <span class="response">O Lord, make haste to help us.</span>
-                    </div>
+                    <h3 class="section-subtitle">For Missions</h3>
 
-                    <div class="gloria">
-                        <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
-                        <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
-                        <p class="rubric">Alleluia.</p>
-                    </div>
-                </div>`,
-      },
-      {
-        type: "psalm",
-        content: `<div class="section">
-                    <div class="psalm">
-                        <h3 class="psalm-title">Psalm 119:105-112</h3>
-                        <p class="psalm-verse"><span class="verse-number">105</span> Thy word is a lantern unto my feet, and a light unto my paths.</p>
-                        <p class="psalm-verse"><span class="verse-number">106</span> I have sworn and am steadfastly purposed to keep thy righteous judgments.</p>
-                        <p class="psalm-verse"><span class="verse-number">107</span> I am troubled above measure; quicken me, O Lord, according to thy word.</p>
-                        <p class="psalm-verse"><span class="verse-number">108</span> Let the freewill offerings of my mouth please thee, O Lord, and teach me thy judgments.</p>
-                        <p class="psalm-verse"><span class="verse-number">109</span> My soul is alway in my hand, yet do I not forget thy law.</p>
-                        <p class="psalm-verse"><span class="verse-number">110</span> The ungodly have laid a snare for me, but yet I swerved not from thy commandments.</p>
-                        <p class="psalm-verse"><span class="verse-number">111</span> Thy testimonies have I claimed as mine heritage for ever, and why? they are the very joy of my heart.</p>
-                        <p class="psalm-verse"><span class="verse-number">112</span> I have applied my heart to fulfill thy statutes alway, even unto the end.</p>
-                    </div>
-                    <div class="gloria">
-                        <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
-                        <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
-                    </div>
-                </div>`,
-      },
-      {
-        type: "prayers",
-        content: `<div class="section">
-                    <p class="rubric">Officiant and People</p>
                     <p class="prayer-text response">
                         Our Father, who art in heaven,<br>
-                        hallowed be thy Name,<br>
-                        thy kingdom come,<br>
-                        thy will be done,<br>
-                        on earth as it is in heaven.<br>
-                        Give us this day our daily bread.<br>
+                        Hallowed be thy Name,<br>
+                        Thy kingdom come,<br>
+                        Thy will be done, on earth as it is in heaven.<br>
+                        Give us this day our daily bread;<br>
                         And forgive us our trespasses,<br>
-                        as we forgive those who trespass against us.<br>
+                        As we forgive those that trespass against us;<br>
                         And lead us not into temptation,<br>
-                        but deliver us from evil.<br>
-                        For thine is the kingdom, and the power, and the glory,<br>
-                        for ever and ever. Amen.
+                        But deliver us from evil.<br>
+                        For thine is the kingdom, the power, and the glory,<br>
+                        For ever and ever. <span class="response">Amen.</span>
                     </p>
 
-                    <div class="collect">
-                        <p class="collect-title">Collect</p>
-                        <p class="prayer-text">
-                            Blessed Savior, at this hour thou didst hang upon the cross, stretching out thy loving arms: Grant that all the peoples of the earth may look unto thee and be saved; for thy tender mercies' sake. <span class="response">Amen.</span>
-                        </p>
-                    </div>
-                </div>`,
-      },
-      {
-        type: "closing",
-        content: `<div class="section">
-                    <p class="prayer-text">
-                        Let us bless the Lord.<br>
-                        <span class="response">Thanks be to God.</span>
-                    </p>
+                    <p class="prayer-text"><em>And I, if I be lifted up, will draw all men unto me.</em></p>
+
+                    <p class="prayer-text">Blessed Saviour, who at this hour didst hang upon the cross stretching out thy loving arms: Grant that all the peoples of the earth may look unto thee and be saved; who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. <span class="response">Amen.</span></p>
+
+                    <p class="rubric">At mid-day. <em>O king, I saw a light above the brightness of the sun.</em></p>
+
+                    <p class="prayer-text">Almighty Saviour, who at mid-day didst call thy servant Saint Paul to be an Apostle to the Gentiles: We beseech thee to illumine the world with the radiance of thy glory, that all nations may come and worship thee; who livest and reignest with the Father and the Holy Spirit, one God, world without end. <span class="response">Amen.</span></p>
                 </div>`,
       },
     ],
