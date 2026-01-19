@@ -647,55 +647,27 @@ const prayerData = {
     ],
   },
   compline: {
-    title: "Compline",
+    title: "An Order for Compline",
     sections: [
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">The Officiant begins</p>
-                    <p class="prayer-text">The Lord Almighty grant us a peaceful night and a perfect end. <span class="response">Amen.</span></p>
+                    <p class="rubric">This Service may be used when Evening Prayer has been previously said.</p>
 
-                    <p class="rubric">Officiant</p>
-                    <p class="prayer-text">Our help is in the Name of the Lord;</p>
-                    <p class="prayer-text response">The maker of heaven and earth.</p>
+                    <p class="rubric">All standing up, the Minister shall say:</p>
 
-                    <p class="rubric">The Officiant continues</p>
-                    <p class="prayer-text">Let us humbly confess our sins unto Almighty God.</p>
+                    <p class="prayer-text">The Lord Almighty grant us a quiet night and a perfect end. <span class="response">Amen.</span></p>
 
-                    <p class="rubric">Silence may be kept. The Officiant and People say</p>
-                    <p class="prayer-text indent">Almighty God and Father, we confess to thee,<br>
-                    and to one another,<br>
-                    and to the whole company of heaven,<br>
-                    that we have sinned, through our own fault,<br>
-                    in thought, and word, and deed,<br>
-                    and through what we have left undone.<br>
-                    For the sake of thy Son our Lord Jesus Christ,<br>
-                    have mercy upon us, forgive us our sins,<br>
-                    and by the power of thy Holy Spirit<br>
-                    raise us up to serve thee in newness of life,<br>
-                    to the glory of thy Name. Amen.</p>
+                    <p class="prayer-text">O God, make speed to save us;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">O Lord, make haste to help us.</span></p>
 
-                    <p class="rubric">The Officiant alone says</p>
-                    <p class="prayer-text">May Almighty God grant us forgiveness of all our sins, and the grace and comfort of the Holy Spirit. <span class="response">Amen.</span></p>
-                </div>`,
-      },
-      {
-        type: "invitatory",
-        content: `<div class="section">
-                    <div class="versicle">
-                        <span class="versicle-label">V.</span>
-                        <span>O God, make speed to save us.</span>
-                    </div>
-                    <div class="versicle">
-                        <span class="versicle-label">R.</span>
-                        <span class="response">O Lord, make haste to help us.</span>
-                    </div>
+                    <p class="prayer-text indent"><em>Minister</em> Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">As it was in the beginning, is now, and ever shall be, world without end. Amen.</span></p>
 
-                    <div class="gloria">
-                        <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
-                        <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
-                        <p class="rubric">Alleluia.</p>
-                    </div>
+                    <p class="prayer-text indent"><em>Minister</em> Praise ye the Lord;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">The Lord's name be praised.</span></p>
+
+                    <p class="rubric">Then shall be said or sung one or more of the following Psalms: Psalm 4; Psalm 31: 1-6; Psalm 91; Psalm 134; or any other Psalm or Psalms.</p>
                 </div>`,
       },
       {
@@ -703,8 +675,16 @@ const prayerData = {
         content: `<div class="section">
                     <div class="psalm">
                         <h3 class="psalm-title">Psalm 4</h3>
-                        <p class="psalm-verse"><span class="verse-number">1</span> Hear me when I call, O God of my righteousness; thou hast set me at liberty when I was in trouble; have mercy upon me, and hearken unto my prayer.</p>
-                        <p class="psalm-verse"><span class="verse-number">8</span> I will lay me down in peace, and take my rest; for it is thou, Lord, only, that makest me dwell in safety.</p>
+                        <p class="rubric"><em>Cum invocarem.</em></p>
+                        <p class="psalm-verse">Hear me when I call, O God of my righteousness: / thou hast set me at liberty when I was in trouble; have mercy upon me, and hearken unto my prayer.</p>
+                        <p class="psalm-verse">O ye sons of men, how long will ye blaspheme mine honour, / and have such pleasure in vanity, and seek after falsehood?</p>
+                        <p class="psalm-verse">Know this also, that the Lord hath chosen to himself the man that is godly; / when I call upon the Lord, he will hear me.</p>
+                        <p class="psalm-verse">Stand in awe, and sin not; / commune with your own heart, and in your chamber, and be still.</p>
+                        <p class="psalm-verse">Offer the sacrifice of righteousness, / and put your trust in the Lord.</p>
+                        <p class="psalm-verse">There be many that say, / Who will shew us any good?</p>
+                        <p class="psalm-verse">Lord, lift thou up / the light of thy countenance upon us.</p>
+                        <p class="psalm-verse">Thou hast put gladness in my heart; / yea, more than when their grain and wine and oil increase.</p>
+                        <p class="psalm-verse">I will lay me down in peace, and take my rest; / for it is thou, Lord, only, that makest me dwell in safety.</p>
                     </div>
                     <div class="gloria">
                         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
@@ -715,31 +695,20 @@ const prayerData = {
       {
         type: "readings",
         content: `<div class="section">
-                    <p class="rubric">One or more of the following, or some other suitable passage of Scripture, is read.</p>
-                    <div class="reading">
-                        <p class="prayer-text">Thou, O Lord, art in the midst of us, and we are called by thy Name; leave us not, O Lord our God. <span class="rubric">Jeremiah 14:9</span></p>
-
-                        <p class="rubric">At the end of the reading is said</p>
-                        <p class="prayer-text">
-                            Thanks be to God.<br>
-                            <span class="response">And grant us thy salvation.</span>
-                        </p>
-                    </div>
+                    <p class="rubric">Then a Lesson. At the end, the Reader may say</p>
+                    <p class="prayer-text">Thanks be to God.</p>
                 </div>`,
       },
       {
         type: "nunc-dimittis",
         content: `<div class="section">
+                    <p class="rubric">The following may be sung or said:</p>
                     <div class="canticle">
                         <h3 class="canticle-title">Nunc Dimittis</h3>
-                        <p class="rubric">The Song of Simeon - Luke 2:29-32</p>
                         <p class="prayer-text">
-                            Lord, now lettest thou thy servant depart in peace,<br>
-                            according to thy word;<br>
-                            For mine eyes have seen thy salvation,<br>
-                            which thou hast prepared before the face of all people,<br>
-                            to be a light to lighten the Gentiles,<br>
-                            and to be the glory of thy people Israel.
+                            Lord, now lettest thou thy servant depart in peace, / according to thy word;<br>
+                            For mine eyes have seen thy salvation, / which thou hast prepared before the face of all people,<br>
+                            To be a light to lighten the Gentiles, / and to be the glory of thy people Israel.
                         </p>
                         <div class="gloria">
                             <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
@@ -749,50 +718,86 @@ const prayerData = {
                 </div>`,
       },
       {
+        type: "apostles-creed",
+        content: `<div class="section">
+                    <p class="rubric">All say the Apostles' Creed.</p>
+                    <p class="prayer-text response">
+                        I believe in God the Father Almighty, Maker of heaven and earth:<br><br>
+                        And in Jesus Christ his only Son our Lord, Who was conceived by the Holy Ghost, Born of the Virgin Mary, Suffered under Pontius Pilate, Was crucified, dead, and buried: He descended into hell; The third day he rose again from the dead; He ascended into heaven, And sitteth on the right hand of God the Father Almighty; From thence he shall come to judge the quick and the dead.<br><br>
+                        I believe in the Holy Ghost; The holy Catholic Church; The Communion of Saints; The Forgiveness of sins; The Resurrection of the body, And the Life everlasting. Amen.
+                    </p>
+                </div>`,
+      },
+      {
+        type: "kyrie",
+        content: `<div class="section">
+                    <p class="prayer-text">Lord, have mercy upon us.</p>
+                    <p class="prayer-text response">Christ, have mercy upon us.</p>
+                    <p class="prayer-text">Lord, have mercy upon us.</p>
+                </div>`,
+      },
+      {
         type: "prayers",
         content: `<div class="section">
-                    <p class="rubric">Officiant: Let us pray.</p>
+                    <p class="rubric">All kneeling, the Minister and People say the Lord's Prayer.</p>
 
-                    <p class="rubric">Officiant and People</p>
                     <p class="prayer-text response">
                         Our Father, who art in heaven,<br>
-                        hallowed be thy Name,<br>
-                        thy kingdom come,<br>
-                        thy will be done,<br>
-                        on earth as it is in heaven.<br>
-                        Give us this day our daily bread.<br>
+                        Hallowed be thy Name,<br>
+                        Thy kingdom come,<br>
+                        Thy will be done, on earth as it is in heaven.<br>
+                        Give us this day our daily bread;<br>
                         And forgive us our trespasses,<br>
-                        as we forgive those who trespass against us.<br>
+                        As we forgive those that trespass against us;<br>
                         And lead us not into temptation,<br>
-                        but deliver us from evil.
+                        But deliver us from evil. <span class="response">Amen.</span>
                     </p>
 
-                    <div class="versicle">
-                        <span class="versicle-label">V.</span>
-                        <span>O Lord, hear our prayer.</span>
-                    </div>
-                    <div class="versicle">
-                        <span class="versicle-label">R.</span>
-                        <span class="response">And let our cry come unto thee.</span>
-                    </div>
+                    <p class="prayer-text"><em>Minister</em> O Lord, show thy mercy upon us;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And grant us thy salvation.</span></p>
+
+                    <p class="prayer-text"><em>Minister</em> O Lord, save the Queen;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And mercifully hear us when we call upon thee.</span></p>
+
+                    <p class="prayer-text"><em>Minister</em> Endue thy Ministers with righteousness;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And make thy chosen people joyful.</span></p>
+
+                    <p class="prayer-text"><em>Minister</em> O Lord, save thy people;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And bless thine inheritance.</span></p>
+
+                    <p class="prayer-text"><em>Minister</em> Give peace in our time, O Lord;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And evermore mightily defend us.</span></p>
+
+                    <p class="prayer-text"><em>Minister</em> O God, make clean our hearts within us;</p>
+                    <p class="prayer-text indent"><em>Answer</em> <span class="response">And take not thy Holy Spirit from us.</span></p>
                 </div>`,
       },
       {
         type: "collects",
         content: `<div class="section">
-                    <div class="collect">
-                        <p class="prayer-text">
-                            Visit this place, O Lord, and drive far from it all snares of the enemy; let thy holy angels dwell with us to preserve us in peace; and let thy blessing be upon us always; through Jesus Christ our Lord. <span class="response">Amen.</span>
-                        </p>
-                    </div>
+                    <p class="rubric">Then these three Collects.</p>
+
+                    <p class="prayer-text">
+                        Lighten our darkness, we beseech thee, O Lord; and by thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Saviour Jesus Christ. <span class="response">Amen.</span>
+                    </p>
+
+                    <p class="prayer-text">
+                        Be our light in the darkness, O Lord, and in thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Saviour Jesus Christ. <span class="response">Amen.</span>
+                    </p>
+
+                    <p class="prayer-text">
+                        Visit, we beseech thee, O Lord, this place, and drive far from it all the snares of the enemy; let thy holy angels dwell herein to preserve us in peace; and may thy blessing be upon us evermore; through Jesus Christ our Lord. <span class="response">Amen.</span>
+                    </p>
+
+                    <p class="rubric">The Minister may here end with the Blessing, or he may add other Prayers.</p>
                 </div>`,
       },
       {
         type: "closing",
         content: `<div class="section">
-                    <p class="rubric">The Officiant concludes</p>
+                    <p class="rubric">The Minister says or sings</p>
                     <p class="prayer-text">
-                        The almighty and merciful Lord, Father, Son, and Holy Spirit, bless us and keep us. <span class="response">Amen.</span>
+                        The almighty and merciful Lord, the Father, the Son, and the Holy Ghost, bless us and keep us. <span class="response">Amen.</span>
                     </p>
                 </div>`,
       },
