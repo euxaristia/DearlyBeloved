@@ -203,7 +203,7 @@ main {
 
 .psalm {
     margin: 25px 0;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .psalm-title {
@@ -467,7 +467,7 @@ body.dark-mode .moon-icon {
     }
 
     .psalm {
-        padding-left: 10px;
+        padding-left: 20px;
     }
 
     .psalm-verse {
