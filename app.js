@@ -321,8 +321,16 @@ const prayerData = {
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">The Officiant begins with one or more of the following sentences of Scripture.</p>
-                    <p class="prayer-text">"Let my prayer be set forth in thy sight as the incense, and let the lifting up of my hands be an evening sacrifice." <span class="rubric">Psalm 141:2</span></p>
+                    <p class="rubric">The Minister shall read aloud one or more of these Sentences of the Scriptures that follow, or at special seasons the appropriate Sentences in Morning Prayer.</p>
+
+                    <p class="prayer-text"><em>Of Missions.</em> Go ye into all the world, and preach the Gospel to every creature.</p>
+                    <p class="rubric">St. Mark 16. 15.</p>
+
+                    <p class="rubric">The Minister, turning to the people, shall say the Exhortation in the form following. Occasionally the second paragraph may be omitted.</p>
+
+                    <p class="prayer-text">Dearly beloved brethren, the Scripture moveth us in sundry places to acknowledge and confess our manifold sins and wickedness; and that we should not dissemble nor cloke them before the face of Almighty God our heavenly Father; but confess them with an humble, lowly, penitent, and obedient heart; to the end that we may obtain forgiveness of the same, by his infinite goodness and mercy.</p>
+
+                    <p class="prayer-text">And although we ought at all times humbly to acknowledge our sins before God; yet ought we most chiefly so to do, when we assemble and meet together to render thanks for the great benefits that we have received at his hands, to set forth his most worthy praise, to hear his most holy Word, and to ask those things which are requisite and necessary, as well for the body as the soul.</p>
 
                     <p class="rubric">The following Confession of Sin may then be said; or the Office may continue at once with "O God, make speed to save us."</p>
 
