@@ -682,14 +682,30 @@ const prayerData = {
                         For thine is the kingdom, the power, and the glory,<br>
                         For ever and ever. <span class="response">Amen.</span>
                     </p>
-
-                    <p class="prayer-text"><em>And I, if I be lifted up, will draw all men unto me.</em></p>
+                </div>`,
+      },
+      {
+        type: "crucifixion",
+        content: `<div class="section">
+                    <p class="prayer-text center"><em>And I, if I be lifted up, will draw all men unto me.</em></p>
 
                     <p class="prayer-text">Blessed Saviour, who at this hour didst hang upon the cross stretching out thy loving arms: Grant that all the peoples of the earth may look unto thee and be saved; who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. <span class="response">Amen.</span></p>
+                </div>`,
+      },
+      {
+        type: "paul",
+        content: `<div class="section">
+                    <p class="prayer-text center"><em>At mid-day, O king, I saw a light above the brightness of the sun.</em></p>
 
-                    <p class="rubric">At mid-day. <em>O king, I saw a light above the brightness of the sun.</em></p>
+                    <p class="prayer-text">Almighty Saviour, who at mid-day didst call thy servant Saint Paul to be an Apostle to the Gentiles: We beseech thee to illumine the world with the radiance of thy glory, that all nations may come and worship thee; who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. <span class="response">Amen.</span></p>
+                </div>`,
+      },
+      {
+        type: "peter",
+        content: `<div class="section">
+                    <p class="prayer-text center"><em>Peter went up upon the house-top to pray, about the sixth hour.</em></p>
 
-                    <p class="prayer-text">Almighty Saviour, who at mid-day didst call thy servant Saint Paul to be an Apostle to the Gentiles: We beseech thee to illumine the world with the radiance of thy glory, that all nations may come and worship thee; who livest and reignest with the Father and the Holy Spirit, one God, world without end. <span class="response">Amen.</span></p>
+                    <p class="prayer-text">Father of mercies, who to thine Apostle Saint Peter didst reveal in three-fold vision thy boundless compassion: Forgive, we pray thee, our unbelief, and so enlarge our hearts, and enkindle our zeal, that we may fervently desire the salvation of all men, and with more ready diligence labour in the extension of thy kingdom; for his sake, who gave himself for the life of the world, thy Son our Saviour Jesus Christ. <span class="response">Amen.</span></p>
                 </div>`,
       },
     ],
