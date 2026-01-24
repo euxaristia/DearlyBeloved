@@ -15,7 +15,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Common Prayer" />
         <script>
-            // Apply theme and office selection immediately to prevent flash
+            // Apply theme, sidebar state, and office selection immediately to prevent flash
             (function () {
                 // Theme
                 const savedTheme = localStorage.getItem("theme");
@@ -27,6 +27,13 @@
                     (savedTheme === null && prefersDark)
                 ) {
                     document.documentElement.classList.add("dark-mode");
+                }
+
+                // Sidebar state (apply initial collapsed state if saved)
+                const sidebarCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+                const isMobile = window.innerWidth < 768;
+                if (!isMobile && sidebarCollapsed) {
+                    document.documentElement.setAttribute('data-sidebar-collapsed', 'true');
                 }
 
                 // Determine appropriate office based on time

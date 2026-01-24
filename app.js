@@ -1873,6 +1873,9 @@ function setupSidebar() {
     appContainer.classList.remove('sidebar-collapsed');
   }
 
+  // Remove the data attribute now that JavaScript has taken over
+  document.documentElement.removeAttribute('data-sidebar-collapsed');
+
   // Toggle sidebar
   sidebarToggle.addEventListener('click', () => {
     const isMobile = window.innerWidth < 768;

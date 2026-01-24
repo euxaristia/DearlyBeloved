@@ -562,7 +562,8 @@ body.dark-mode .moon-icon {
     -webkit-backdrop-filter: blur(20px);
 }
 
-.sidebar.collapsed {
+.sidebar.collapsed,
+html[data-sidebar-collapsed="true"] .sidebar {
     transform: translateX(-100%);
 }
 
@@ -674,6 +675,15 @@ body.dark-mode .moon-icon {
     left: calc(var(--sidebar-width) + 20px);
 }
 
+/* Initial sidebar state based on data attribute (prevent flash) */
+html[data-sidebar-collapsed="true"] .sidebar-toggle {
+    left: 20px;
+}
+
+html:not([data-sidebar-collapsed="true"]) .sidebar-toggle {
+    left: calc(var(--sidebar-width) + 20px);
+}
+
 /* Sidebar Backdrop Overlay */
 .sidebar-backdrop {
     position: fixed;
@@ -699,7 +709,8 @@ body.dark-mode .moon-icon {
     margin-left: var(--sidebar-width);
 }
 
-.app-container.sidebar-collapsed {
+.app-container.sidebar-collapsed,
+html[data-sidebar-collapsed="true"] .app-container {
     margin-left: auto !important;
 }
 
