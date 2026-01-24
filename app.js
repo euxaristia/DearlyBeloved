@@ -1839,9 +1839,126 @@ function injectCollects() {
 }
 
 // Start the app when DOM is loaded
+// Setup Sidebar Navigation
+function setupSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+  const appContainer = document.getElementById('app-container');
+  const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
+
+  if (!sidebar || !sidebarToggle) return;
+
+  // Load saved sidebar state from localStorage
+  const sidebarCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+  const isMobile = window.innerWidth < 768;
+
+  // Initialize sidebar state based on device
+  if (!isMobile && sidebarCollapsed) {
+    sidebar.classList.add('collapsed');
+    appContainer.classList.add('sidebar-collapsed');
+  } else if (isMobile) {
+    sidebar.classList.remove('open');
+  }
+
+  // Toggle sidebar
+  sidebarToggle.addEventListener('click', () => {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // Mobile: toggle overlay mode
+      sidebar.classList.toggle('open');
+      sidebarBackdrop.classList.toggle('active');
+      sidebarToggle.classList.toggle('sidebar-open');
+    } else {
+      // Desktop: toggle collapse
+      sidebar.classList.toggle('collapsed');
+      appContainer.classList.toggle('sidebar-collapsed');
+      sidebarToggle.classList.toggle('sidebar-open');
+
+      // Save state to localStorage
+      const isCollapsed = sidebar.classList.contains('collapsed');
+      localStorage.setItem('sidebar-collapsed', isCollapsed);
+    }
+  });
+
+  // Close sidebar when clicking backdrop (mobile)
+  sidebarBackdrop.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebarBackdrop.classList.remove('active');
+    sidebarToggle.classList.remove('sidebar-open');
+  });
+
+  // Setup navigation items
+  sidebarNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Remove active from all items
+      sidebarNavItems.forEach(i => i.classList.remove('active'));
+
+      // Add active to clicked item
+      item.classList.add('active');
+
+      // Get office and render
+      const office = item.dataset.office;
+      currentOffice = office;
+      renderPrayer(office);
+
+      // Close sidebar on mobile after selection
+      if (window.innerWidth < 768) {
+        sidebar.classList.remove('open');
+        sidebarBackdrop.classList.remove('active');
+        sidebarToggle.classList.remove('sidebar-open');
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const isMobile = window.innerWidth < 768;
+
+    if (!isMobile) {
+      // Desktop: restore saved state
+      const sidebarCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+      if (sidebarCollapsed) {
+        sidebar.classList.add('collapsed');
+        appContainer.classList.add('sidebar-collapsed');
+      } else {
+        sidebar.classList.remove('collapsed');
+        appContainer.classList.remove('sidebar-collapsed');
+      }
+      // Remove mobile classes
+      sidebar.classList.remove('open');
+      sidebarBackdrop.classList.remove('active');
+      sidebarToggle.classList.remove('sidebar-open');
+    } else {
+      // Mobile: always start closed
+      sidebar.classList.remove('open', 'collapsed');
+      sidebarBackdrop.classList.remove('active');
+      sidebarToggle.classList.remove('sidebar-open');
+    }
+  });
+}
+
+// Set active sidebar item based on current office
+function setActiveSidebarItem(office) {
+  const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
+  sidebarNavItems.forEach(item => {
+    if (item.dataset.office === office) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   init();
   initDarkMode();
+  setupSidebar();
+  setActiveSidebarItem(currentOffice);
   initPWA();
   initNotifications();
 

@@ -125,7 +125,46 @@
             </div>
         </div>
 
-        <div class="app-container">
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation sidebar">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke-width="2"/>
+                <line x1="3" y1="12" x2="21" y2="12" stroke-width="2"/>
+                <line x1="3" y1="18" x2="21" y2="18" stroke-width="2"/>
+            </svg>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">Daily Offices</h3>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-nav-item" data-office="morning">
+                            <span class="sidebar-nav-icon">🌅</span>
+                            <span class="sidebar-nav-label">Morning Prayer</span>
+                        </button>
+                        <button class="sidebar-nav-item" data-office="midday">
+                            <span class="sidebar-nav-icon">☀️</span>
+                            <span class="sidebar-nav-label">Midday Prayer</span>
+                        </button>
+                        <button class="sidebar-nav-item" data-office="evening">
+                            <span class="sidebar-nav-icon">🌆</span>
+                            <span class="sidebar-nav-label">Evening Prayer</span>
+                        </button>
+                        <button class="sidebar-nav-item" data-office="compline">
+                            <span class="sidebar-nav-icon">🌙</span>
+                            <span class="sidebar-nav-label">Compline</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Sidebar Backdrop Overlay (for mobile) -->
+        <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+        <div class="app-container" id="app-container">
             <header>
                 <h1>Common Prayer</h1>
                 <p class="subtitle">The Daily Office</p>
