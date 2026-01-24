@@ -89,24 +89,11 @@ The 1962 Canadian BCP, while traditional, is still under copyright protection by
 
 ### 5. Custom Code
 
-**Status:** ✅ **MIT Licensed**
+**Status:** 📝 **Unlicensed (All Rights Reserved)**
 
-**License Text:**
-```
-MIT License
+**Copyright:** Copyright (c) 2026 @euxaristia
 
-Copyright (c) 2026 @euxaristia
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+All custom application code is the original work of @euxaristia and is not licensed for distribution or modification. This code is provided as-is for personal use.
 
 **What's Included:**
 - `app.js` - Core application logic, liturgical calendar calculations, rendering
@@ -187,7 +174,7 @@ All opening sentences are either:
 | **Lectionary References** | 1662 BCP | Public Domain | None - Public Domain |
 | **Collects** | 1662 BCP | Public Domain | None - Public Domain |
 | **Rubrics (Instructions)** | 1662 BCP | Public Domain | None - Public Domain |
-| **Application Code** | @euxaristia (2026) | Original Work | MIT License |
+| **Application Code** | @euxaristia (2026) | Original Work | Unlicensed (All Rights Reserved) |
 | **Sentences of Scripture** | BCP + Bible + Ancient Liturgies | Public Domain | None - Public Domain |
 
 ---
@@ -209,7 +196,7 @@ All opening sentences are either:
 2. **Public Domain Status** - Explicitly recognized in all jurisdictions (US, UK, Canada, etc.)
 3. **No Commercial Use** - This is a non-profit daily prayer app, not sold for profit
 4. **Attribution** - Full attribution given to BCP and KJV sources in README and footer
-5. **Original Code** - All software is original work under MIT license
+5. **Original Code** - All software is original work (unlicensed, all rights reserved)
 6. **No Derivative Copyright Issues** - Not creating derivatives of copyrighted works
 
 ---
@@ -231,7 +218,7 @@ Under US copyright law (and equivalent laws in UK, Canada, etc.):
 
 All content is either:
 1. **Public Domain** (1662 BCP, 1611 KJV, traditional prayers, ancient liturgies)
-2. **Originally Created** (application code under MIT license)
+2. **Originally Created** (application code, unlicensed - all rights reserved)
 3. **Properly Licensed** (bible-api.com provides public domain KJV)
 
 There are no copyright violations, licensing conflicts, or legal concerns with using or distributing this application.
