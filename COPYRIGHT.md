@@ -32,6 +32,7 @@ The 1962 Canadian BCP, while traditional, is still under copyright protection by
 - Psalter structure and distribution
 - Versicles and responses
 - Canticles (Te Deum, Benedictus, Magnificat, Nunc Dimittis)
+- Rubrics (all instructional text in original 1662 form)
 
 ### 2. King James Version (1611) Bible Text
 
@@ -117,7 +118,33 @@ copies or substantial portions of the Software.
 - `index.html` - Page structure and layout
 - Service worker for PWA functionality
 
-### 6. Sentences of Scripture
+### 6. Rubrics (Instructional Text)
+
+**Status:** ✅ **Public Domain**
+
+Rubrics (the instructional text in italics/red that tells you how to conduct the service) are an integral part of the 1662 BCP. Examples include:
+
+- "The Minister shall read aloud one or more of these Sentences..."
+- "The Minister, turning to the people, shall say..."
+- "A general Confession to be said of the whole Congregation..."
+- "Here the Lord's Prayer may be said..."
+- All other directional/instructional text
+
+**Why They're Safe to Use:**
+- Rubrics are part of the published 1662 BCP text (public domain)
+- They are instructional/functional text, not creative content
+- They have been reproduced unchanged for 350+ years
+- No copyright claim has ever been made on BCP rubrics
+- Essential to the functioning and authenticity of the liturgy
+- Reproducing them exactly as written is standard practice in all BCP editions and liturgical apps
+
+**What We Include:**
+- Original 1662 BCP rubrics unchanged
+- Additional rubrics for clarity where needed (marked as such)
+- Formatting (italics, indentation) for visual distinction
+- Exact wording preserved to maintain liturgical integrity
+
+### 7. Sentences of Scripture
 
 **Status:** ✅ **Public Domain**
 
@@ -159,6 +186,7 @@ All opening sentences are either:
 | **Psalm Cycle Data** | Traditional Anglican Practice | Public Domain | None - Public Domain |
 | **Lectionary References** | 1662 BCP | Public Domain | None - Public Domain |
 | **Collects** | 1662 BCP | Public Domain | None - Public Domain |
+| **Rubrics (Instructions)** | 1662 BCP | Public Domain | None - Public Domain |
 | **Application Code** | @euxaristia (2026) | Original Work | MIT License |
 | **Sentences of Scripture** | BCP + Bible + Ancient Liturgies | Public Domain | None - Public Domain |
 
