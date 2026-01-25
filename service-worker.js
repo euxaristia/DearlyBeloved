@@ -1,4 +1,4 @@
-const CACHE_NAME = "common-prayer-v1";
+const CACHE_NAME = "common-prayer-v2";
 const urlsToCache = [
   "/PrexCommunis/",
   "/PrexCommunis/index.html",
@@ -13,8 +13,10 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
-    }),
+    })
   );
+  // Force the waiting service worker to become the active service worker
+  self.skipWaiting();
 });
 
 // Fetch from cache, fallback to network
@@ -37,8 +39,10 @@ self.addEventListener("activate", (event) => {
           }
         }),
       );
-    }),
+    })
   );
+  // Become the controller for all clients
+  return self.clients.claim();
 });
 
 // Handle notification clicks

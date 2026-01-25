@@ -1372,14 +1372,36 @@ function showNotification(title, office) {
 
 // Register service worker
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/PrexCommunis/service-worker.js")
-    .then((registration) => {
-      console.log("Service Worker registered:", registration);
-    })
-    .catch((error) => {
-      console.log("Service Worker registration failed:", error);
-    });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/PrexCommunis/service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker registered:", registration);
+
+        // Check for updates
+        registration.addEventListener("updatefound", () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener("statechange", () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              // New worker is ready, but waiting to take over
+              console.log("New version available! Reloading...");
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.log("Service Worker registration failed:", error);
+      });
+  });
+
+  // Reload the page when a new service worker takes over
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!refreshing) {
+      window.location.reload();
+      refreshing = true;
+    }
+  });
 }
 
 // Dark mode functionality
