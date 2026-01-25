@@ -17,6 +17,7 @@
         <script>
             // Apply theme, sidebar state, and office selection immediately to prevent flash
             (function () {
+                document.documentElement.classList.add("initializing");
                 // Theme
                 const savedTheme = localStorage.getItem("theme");
                 const prefersDark = window.matchMedia(

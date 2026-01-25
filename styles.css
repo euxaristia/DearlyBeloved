@@ -54,6 +54,14 @@ html.fonts-loading body {
     visibility: hidden;
 }
 
+/* Disable transitions during load/initialization */
+html.initializing *,
+html.initializing *:before,
+html.initializing *:after {
+    transition: none !important;
+    animation: none !important;
+}
+
 * {
     margin: 0;
     padding: 0;

@@ -2009,3 +2009,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.remove("fonts-loading");
   }
 });
+
+// Remove initializing class after everything is loaded to re-enable transitions
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.documentElement.classList.remove('initializing');
+  }, 100);
+});
