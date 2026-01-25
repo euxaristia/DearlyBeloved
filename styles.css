@@ -504,6 +504,14 @@ body.dark-mode .moon-icon {
     font-size: 1.1rem;
 }
 
+.lesson-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
 .scripture-text {
     line-height: 2;
     text-align: justify;

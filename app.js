@@ -897,6 +897,11 @@ function getAppropriateOffice() {
 
 // Initialize the app
 function init() {
+  // Fix scroll restoration glitch
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   // Use the office already determined by the inline script (to prevent flash)
   // Fall back to getAppropriateOffice() if not set
   const initialOffice = document.documentElement.getAttribute(

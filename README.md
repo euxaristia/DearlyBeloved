@@ -1,22 +1,22 @@
-# PrexCommunis - BCP Daily Office
+# 📜 PrexCommunis - BCP Daily Office
 
 A web-based daily office application following the Book of Common Prayer (1662 BCP) with traditional Anglican structure.
 
-## Features
+## ✨ Features
 
-- **Morning and Evening Prayer** with complete service structure matching 1962 BCP Canadian format
-- **Dynamic Psalms** using the 30-day psalter cycle
-- **Daily Readings** from the 1662 BCP two-year lectionary with full KJV text
-- **Liturgical Collects** selected automatically by season and Sunday
-- **Sentences of Scripture** varied for each service
-- **Responsive Design** for desktop and mobile
-- **Dark Mode** support
-- **Offline Support** with service worker caching
-- **Progressive Web App** installable on devices
+- 🌅 **Morning and Evening Prayer** with complete service structure matching 1962 BCP Canadian format
+- 📖 **Dynamic Psalms** using the 30-day psalter cycle
+- 🗓️ **Daily Readings** from the 1662 BCP two-year lectionary with full KJV text
+- ⛪ **Liturgical Collects** selected automatically by season and Sunday
+- 📜 **Sentences of Scripture** varied for each service
+- 📱 **Responsive Design** for desktop and mobile
+- 🌙 **Dark Mode** support
+- 📶 **Offline Support** with service worker caching
+- 📲 **Progressive Web App** installable on devices
 
 ---
 
-## Core Algorithms
+## ⚙️ Core Algorithms
 
 ### 1. Liturgical Calendar Determination
 
@@ -239,7 +239,7 @@ lectionary[1][23] = {  // January 23
 
 ---
 
-## Data Sources & Licensing
+## 📊 Data Sources & Licensing
 
 | Component | Source | License | Status |
 |-----------|--------|---------|--------|
@@ -253,7 +253,7 @@ lectionary[1][23] = {  // January 23
 
 ---
 
-## Verification Checklist for Rector
+## ✅ Verification Checklist for Rector
 
 Please verify the algorithms against your theological knowledge:
 
@@ -290,7 +290,7 @@ Please verify the algorithms against your theological knowledge:
 
 ---
 
-## Technical Stack
+## 🛠️ Technical Stack
 
 - **Frontend:** Vanilla JavaScript (no frameworks, ES6+)
 - **Styling:** Pure CSS3 with CSS Grid and Flexbox
@@ -302,7 +302,7 @@ Please verify the algorithms against your theological knowledge:
 
 ---
 
-## File Structure
+## 📁 File Structure
 
 ```
 PrexCommunis/
@@ -322,7 +322,7 @@ PrexCommunis/
 
 ---
 
-## Installation & Usage
+## 🚀 Installation & Usage
 
 ### Local Use
 1. Clone: `git clone https://github.com/euxaristia/PrexCommunis.git`
@@ -336,7 +336,7 @@ PrexCommunis/
 
 ---
 
-## Development Notes
+## 📝 Development Notes
 
 **Extending the Lectionary:**
 - Edit `lectionary.js` to modify readings for any day
@@ -365,7 +365,7 @@ PrexCommunis/
 
 ---
 
-## License
+## ⚖️ License
 
 - **Liturgical Content:** Public domain (BCP 1662, KJV, traditional texts)
 - **Custom Code:** MIT License
