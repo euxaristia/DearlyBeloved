@@ -368,7 +368,7 @@ PrexCommunis/
 ## ⚖️ License
 
 - **Liturgical Content:** Public domain (BCP 1662, KJV, traditional texts)
-- **Custom Code:** MIT License
+- **Custom Code:** BSD 3-Clause License
 - **No copyright restrictions on any content**
 
 ---

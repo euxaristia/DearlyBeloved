@@ -2,7 +2,7 @@
 
 ## Summary
 
-**PrexCommunis uses exclusively public domain materials and original code.** There are no copyright violations. All liturgical content, Bible text, and data are in the public domain or explicitly licensed.
+**PrexCommunis uses exclusively public domain materials and original code.** There are no copyright violations. All liturgical content, Bible text, and data are in the public domain or explicitly licensed. The application code is licensed under the BSD 3-Clause license.
 
 ---
 
@@ -89,11 +89,19 @@ The 1962 Canadian BCP, while traditional, is still under copyright protection by
 
 ### 5. Custom Code
 
-**Status:** 📝 **Unlicensed (All Rights Reserved)**
+**Status:** 📝 **Licensed (BSD 3-Clause)**
 
 **Copyright:** Copyright (c) 2026 @euxaristia
 
-All custom application code is the original work of @euxaristia and is not licensed for distribution or modification. This code is provided as-is for personal use.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 **What's Included:**
 - `app.js` - Core application logic, liturgical calendar calculations, rendering
@@ -174,7 +182,7 @@ All opening sentences are either:
 | **Lectionary References** | 1662 BCP | Public Domain | None - Public Domain |
 | **Collects** | 1662 BCP | Public Domain | None - Public Domain |
 | **Rubrics (Instructions)** | 1662 BCP | Public Domain | None - Public Domain |
-| **Application Code** | @euxaristia (2026) | Original Work | Unlicensed (All Rights Reserved) |
+| **Application Code** | @euxaristia (2026) | Original Work | BSD 3-Clause |
 | **Sentences of Scripture** | BCP + Bible + Ancient Liturgies | Public Domain | None - Public Domain |
 
 ---
@@ -196,7 +204,7 @@ All opening sentences are either:
 2. **Public Domain Status** - Explicitly recognized in all jurisdictions (US, UK, Canada, etc.)
 3. **No Commercial Use** - This is a non-profit daily prayer app, not sold for profit
 4. **Attribution** - Full attribution given to BCP and KJV sources in README and footer
-5. **Original Code** - All software is original work (unlicensed, all rights reserved)
+5. **Original Code** - All software is original work licensed under BSD 3-Clause.
 6. **No Derivative Copyright Issues** - Not creating derivatives of copyrighted works
 
 ---
@@ -218,7 +226,7 @@ Under US copyright law (and equivalent laws in UK, Canada, etc.):
 
 All content is either:
 1. **Public Domain** (1662 BCP, 1611 KJV, traditional prayers, ancient liturgies)
-2. **Originally Created** (application code, unlicensed - all rights reserved)
+2. **Originally Created** (application code, BSD 3-Clause)
 3. **Properly Licensed** (bible-api.com provides public domain KJV)
 
 There are no copyright violations, licensing conflicts, or legal concerns with using or distributing this application.
@@ -227,4 +235,4 @@ There are no copyright violations, licensing conflicts, or legal concerns with u
 
 **If you have specific concerns about any particular component, please raise them and they can be addressed.**
 
-Last Updated: January 24, 2026
+Last Updated: January 25, 2026
