@@ -16,7 +16,7 @@
     --sidebar-bg: rgba(42, 42, 42, 0.98);
     --sidebar-border: rgba(255, 255, 255, 0.1);
     --sidebar-hover: rgba(255, 255, 255, 0.08);
-    --sidebar-active: rgba(0, 122, 255, 0.25);
+    --sidebar-active: rgba(139, 105, 20, 0.15);
     --sidebar-text: rgba(255, 255, 255, 0.9);
     --sidebar-text-secondary: rgba(255, 255, 255, 0.6);
     --sidebar-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,6 +36,7 @@ body.dark-mode {
     --page-color: #222222;
     --sidebar-bg: rgba(28, 28, 30, 0.98);
     --sidebar-border: rgba(255, 255, 255, 0.12);
+    --sidebar-active: rgba(212, 168, 83, 0.15);
 }
 
 /* Light mode sidebar override */
@@ -43,7 +44,7 @@ body.dark-mode {
     --sidebar-bg: rgba(255, 255, 255, 0.98);
     --sidebar-border: rgba(0, 0, 0, 0.1);
     --sidebar-hover: rgba(0, 0, 0, 0.05);
-    --sidebar-active: rgba(0, 122, 255, 0.15);
+    --sidebar-active: rgba(139, 105, 20, 0.1);
     --sidebar-text: rgba(0, 0, 0, 0.85);
     --sidebar-text-secondary: rgba(0, 0, 0, 0.5);
 }
@@ -66,6 +67,7 @@ body {
     color: var(--text-primary);
     background-color: var(--primary-bg);
     min-height: 100vh;
+    touch-action: manipulation;
 }
 
 .app-container {
@@ -412,6 +414,7 @@ body.dark-mode .moon-icon {
     from {
         transform: translateY(100%);
     }
+
     to {
         transform: translateY(0);
     }
@@ -623,7 +626,7 @@ html[data-sidebar-collapsed="true"] .sidebar {
 .sidebar-nav-item.active {
     background: var(--sidebar-active);
     font-weight: 500;
-    color: #007aff;
+    color: var(--accent-color);
 }
 
 .sidebar-nav-icon {
@@ -728,6 +731,7 @@ html[data-sidebar-collapsed="true"] .app-container {
 }
 
 @media (max-width: 767px) {
+
     /* Mobile Sidebar Styles */
     .sidebar {
         transform: translateX(-100%);
@@ -747,7 +751,8 @@ html[data-sidebar-collapsed="true"] .app-container {
     }
 
     .sidebar-toggle.sidebar-open {
-        left: 10px; /* Don't shift on mobile */
+        left: 10px;
+        /* Don't shift on mobile */
     }
 
     body {
