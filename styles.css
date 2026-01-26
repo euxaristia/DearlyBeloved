@@ -657,6 +657,7 @@ html[data-sidebar-collapsed="true"] .sidebar {
     position: fixed;
     top: 20px;
     left: 20px;
+    right: auto;
     width: 40px;
     height: 40px;
     border: none;
@@ -758,8 +759,13 @@ html[data-sidebar-collapsed="true"] .app-container {
 
     .sidebar-toggle,
     .sidebar-toggle.sidebar-open {
-        left: 10px;
-        top: 10px;
+        left: calc(10px + env(safe-area-inset-left));
+        top: calc(10px + env(safe-area-inset-top));
+        right: auto;
+    }
+
+    .sidebar-toggle.sidebar-open {
+        transform: translateX(var(--sidebar-width));
     }
 
     body {

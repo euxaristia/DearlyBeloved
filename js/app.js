@@ -1896,7 +1896,7 @@ function setupSidebar() {
     sidebarToggle.classList.add('sidebar-open');
   } else if (isMobile) {
     // Mobile: sidebar hidden by default
-    sidebar.classList.remove('open');
+    sidebar.classList.remove('open', 'collapsed');
     appContainer.classList.remove('sidebar-collapsed');
   }
 
@@ -1913,6 +1913,7 @@ function setupSidebar() {
 
     if (isMobile) {
       // Mobile: toggle overlay mode
+      sidebar.classList.remove('collapsed');
       sidebar.classList.toggle('open');
       sidebarBackdrop.classList.toggle('active');
       sidebarToggle.classList.toggle('sidebar-open');
