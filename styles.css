@@ -690,18 +690,20 @@ html[data-sidebar-collapsed="true"] .sidebar {
     stroke-linejoin: round;
 }
 
-/* Sidebar Toggle Button Position when Open */
-.sidebar-toggle.sidebar-open {
-    left: calc(var(--sidebar-width) + 20px);
-}
+/* Sidebar Toggle Button Position when Open (Desktop only) */
+@media (min-width: 768px) {
+    .sidebar-toggle.sidebar-open {
+        left: calc(var(--sidebar-width) + 20px);
+    }
 
-/* Initial sidebar state based on data attribute (prevent flash) */
-html[data-sidebar-collapsed="true"] .sidebar-toggle {
-    left: 20px;
-}
+    /* Initial sidebar state based on data attribute (prevent flash) */
+    html[data-sidebar-collapsed="true"] .sidebar-toggle {
+        left: 20px;
+    }
 
-html:not([data-sidebar-collapsed="true"]) .sidebar-toggle {
-    left: calc(var(--sidebar-width) + 20px);
+    html:not([data-sidebar-collapsed="true"]) .sidebar-toggle {
+        left: calc(var(--sidebar-width) + 20px);
+    }
 }
 
 /* Sidebar Backdrop Overlay */
@@ -754,14 +756,10 @@ html[data-sidebar-collapsed="true"] .app-container {
         margin-left: 0 !important;
     }
 
-    .sidebar-toggle {
-        left: 10px;
-        top: 10px;
-    }
-
+    .sidebar-toggle,
     .sidebar-toggle.sidebar-open {
         left: 10px;
-        /* Don't shift on mobile */
+        top: 10px;
     }
 
     body {

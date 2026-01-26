@@ -1974,29 +1974,34 @@ function setupSidebar() {
   });
 
   // Handle window resize
+  let lastIsMobile = window.innerWidth < 768;
   window.addEventListener('resize', () => {
     const isMobile = window.innerWidth < 768;
 
-    if (!isMobile) {
-      // Desktop: restore saved state
-      const sidebarCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
-      if (sidebarCollapsed) {
-        sidebar.classList.add('collapsed');
-        appContainer.classList.add('sidebar-collapsed');
-        sidebarToggle.classList.remove('sidebar-open');
+    // Only update if we've crossed the mobile/desktop breakpoint
+    if (isMobile !== lastIsMobile) {
+      if (!isMobile) {
+        // Desktop: restore saved state
+        const sidebarCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+        if (sidebarCollapsed) {
+          sidebar.classList.add('collapsed');
+          appContainer.classList.add('sidebar-collapsed');
+          sidebarToggle.classList.remove('sidebar-open');
+        } else {
+          sidebar.classList.remove('collapsed');
+          appContainer.classList.remove('sidebar-collapsed');
+          sidebarToggle.classList.add('sidebar-open');
+        }
+        // Remove mobile classes
+        sidebar.classList.remove('open');
+        sidebarBackdrop.classList.remove('active');
       } else {
-        sidebar.classList.remove('collapsed');
-        appContainer.classList.remove('sidebar-collapsed');
-        sidebarToggle.classList.add('sidebar-open');
+        // Mobile: always start closed when transitioning from desktop
+        sidebar.classList.remove('open', 'collapsed');
+        sidebarBackdrop.classList.remove('active');
+        sidebarToggle.classList.remove('sidebar-open');
       }
-      // Remove mobile classes
-      sidebar.classList.remove('open');
-      sidebarBackdrop.classList.remove('active');
-    } else {
-      // Mobile: always start closed
-      sidebar.classList.remove('open', 'collapsed');
-      sidebarBackdrop.classList.remove('active');
-      sidebarToggle.classList.remove('sidebar-open');
+      lastIsMobile = isMobile;
     }
   });
 }
