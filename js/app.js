@@ -960,12 +960,17 @@ function init() {
   updateDate();
   renderPrayer(currentOffice);
   setupEventListeners();
+  setupOfficeSwitchButton();
 
   // Set active button based on current office
   updateActiveButton(currentOffice);
+  updateOfficeSwitchButton();
 
-  // Update date every minute
-  setInterval(updateDate, 60000);
+  // Update date and office switch button every minute
+  setInterval(() => {
+    updateDate();
+    updateOfficeSwitchButton();
+  }, 60000);
 }
 
 // Update active button state
@@ -977,6 +982,68 @@ function updateActiveButton(office) {
     } else {
       btn.classList.remove("active");
     }
+  });
+}
+
+// Update office switch button
+function updateOfficeSwitchButton() {
+  const officeSwitchBtn = document.getElementById("office-switch-btn");
+  if (!officeSwitchBtn) return;
+  
+  const appropriateOffice = getAppropriateOffice();
+  const officeNames = {
+    "morning": "Morning Prayer",
+    "midday": "Midday Prayer", 
+    "evening": "Evening Prayer",
+    "compline": "Compline"
+  };
+  
+  const officeIcons = {
+    "morning": "🌅",
+    "midday": "☀️",
+    "evening": "🕯️", 
+    "compline": "🌙"
+  };
+  
+  const iconElement = officeSwitchBtn.querySelector('.office-switch-icon');
+  const textElement = officeSwitchBtn.querySelector('.office-switch-text');
+  
+  iconElement.textContent = officeIcons[appropriateOffice];
+  textElement.textContent = `Switch to ${officeNames[appropriateOffice]}`;
+  
+  // Hide button if already on appropriate office
+  if (currentOffice === appropriateOffice) {
+    officeSwitchBtn.style.display = 'none';
+  } else {
+    officeSwitchBtn.style.display = 'flex';
+  }
+}
+
+// Setup office switch button
+function setupOfficeSwitchButton() {
+  const officeSwitchBtn = document.getElementById("office-switch-btn");
+  if (!officeSwitchBtn) return;
+  
+  officeSwitchBtn.addEventListener('click', () => {
+    const appropriateOffice = getAppropriateOffice();
+    
+    // Store the user's office preference
+    localStorage.setItem('selected-office', appropriateOffice);
+    
+    // Update current office and render
+    currentOffice = appropriateOffice;
+    renderPrayer(currentOffice);
+    
+    // Update UI elements
+    updateActiveButton(currentOffice);
+    setActiveSidebarItem(currentOffice);
+    updateOfficeSwitchButton();
+    
+    // Remove data-initial-office attribute if it exists
+    document.documentElement.removeAttribute("data-initial-office");
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 

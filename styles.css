@@ -727,6 +727,65 @@ html[data-sidebar-collapsed="true"] .sidebar {
     }
 }
 
+/* Office Switch Button */
+.office-switch-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    height: 40px;
+    border: none;
+    background: var(--secondary-bg);
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    gap: 8px;
+    z-index: 1001;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px var(--shadow);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.office-switch-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.office-switch-btn:active {
+    transform: scale(0.98);
+}
+
+.office-switch-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.office-switch-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .office-switch-btn {
+        right: 10px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    
+    .office-switch-text {
+        display: none;
+    }
+    
+    .office-switch-btn {
+        width: 40px;
+        border-radius: 8px;
+    }
+}
+
 /* Sidebar Backdrop Overlay */
 .sidebar-backdrop {
     position: fixed;
