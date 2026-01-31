@@ -36,17 +36,19 @@
                 document.documentElement.setAttribute('data-sidebar-collapsed', 'true');
             }
 
-            // Determine appropriate office based on time
-            const hour = new Date().getHours();
-            let office;
-            if (hour >= 5 && hour < 11) {
-                office = "morning";
-            } else if (hour >= 11 && hour < 14) {
-                office = "midday";
-            } else if (hour >= 14 && hour < 20) {
-                office = "evening";
-            } else {
-                office = "compline";
+            // Check for stored office preference, otherwise determine by time (first visit only)
+            let office = localStorage.getItem('selected-office');
+            if (!office) {
+                const hour = new Date().getHours();
+                if (hour >= 5 && hour < 11) {
+                    office = "morning";
+                } else if (hour >= 11 && hour < 14) {
+                    office = "midday";
+                } else if (hour >= 14 && hour < 20) {
+                    office = "evening";
+                } else {
+                    office = "compline";
+                }
             }
             document.documentElement.setAttribute(
                 "data-initial-office",
