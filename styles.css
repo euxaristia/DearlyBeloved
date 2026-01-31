@@ -660,11 +660,11 @@ html[data-sidebar-collapsed="true"] .sidebar {
 
 .sidebar-nav-icon {
     margin-right: 12px;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
+    width: 32px;
     flex-shrink: 0;
 }
 
