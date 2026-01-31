@@ -679,50 +679,78 @@ const prayerData = {
     ],
   },
   midday: {
-    title: "Prayers at Mid-Day",
+    title: "Midday Prayer",
     sections: [
       {
         type: "opening",
         content: `<div class="section">
-                    <h3 class="section-subtitle">For Missions</h3>
+                    <p class="rubric">At Midday the following devotion may be used.</p>
+
+                    <p class="prayer-text">O God, make speed to save us;</p>
+                    <p class="prayer-text response">O Lord, make haste to help us.</p>
+
+                    <p class="prayer-text">Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
+                    <p class="prayer-text response">As it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
+                </div>`,
+      },
+      {
+        type: "psalm",
+        content: `<div class="section">
+                    <p class="rubric">Then shall be said one of the following Psalms.</p>
+                    <div class="psalm">
+                        <h3 class="psalm-title">Psalm 121</h3>
+                        <p class="rubric"><em>Levavi oculos.</em></p>
+                        <p class="psalm-verse">I will lift up mine eyes unto the hills: / from whence cometh my help.</p>
+                        <p class="psalm-verse">My help cometh even from the Lord, / who hath made heaven and earth.</p>
+                        <p class="psalm-verse">He will not suffer thy foot to be moved; / and he that keepeth thee will not sleep.</p>
+                        <p class="psalm-verse">Behold, he that keepeth Israel / shall neither slumber nor sleep.</p>
+                        <p class="psalm-verse">The Lord himself is thy keeper; / the Lord is thy defence upon thy right hand;</p>
+                        <p class="psalm-verse">So that the sun shall not burn thee by day, / neither the moon by night.</p>
+                        <p class="psalm-verse">The Lord shall preserve thee from all evil; / yea, it is even he that shall keep thy soul.</p>
+                        <p class="psalm-verse">The Lord shall preserve thy going out, and thy coming in, / from this time forth for evermore.</p>
+                    </div>
+                    <div class="gloria">
+                        <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
+                        <p>as it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
+                    </div>
+                </div>`,
+      },
+      {
+        type: "reading",
+        content: `<div class="section">
+                    <p class="rubric">Then may be read a sentence of Scripture.</p>
+                    <p class="prayer-text">Jesus said, And I, if I be lifted up from the earth, will draw all men unto me. <span class="rubric">St John 12. 32.</span></p>
+                </div>`,
+      },
+      {
+        type: "prayers",
+        content: `<div class="section">
+                    <p class="rubric">Then shall be said the following prayers.</p>
 
                     <p class="prayer-text response">
-                        Our Father, who art in heaven,<br>
-                        Hallowed be thy Name,<br>
-                        Thy kingdom come,<br>
-                        Thy will be done, on earth as it is in heaven.<br>
-                        Give us this day our daily bread;<br>
-                        And forgive us our trespasses,<br>
-                        As we forgive those that trespass against us;<br>
-                        And lead us not into temptation,<br>
-                        But deliver us from evil.<br>
-                        For thine is the kingdom, the power, and the glory,<br>
-                        For ever and ever. <span class="response">Amen.</span>
+                        Lord, have mercy upon us.<br>
+                        Christ, have mercy upon us.<br>
+                        Lord, have mercy upon us.
                     </p>
+
+                    <p class="prayer-text response">
+                        Our Father, who art in heaven, Hallowed be thy Name, Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread; And forgive us our trespasses, As we forgive them that trespass against us; And lead us not into temptation, But deliver us from evil. <span class="response">Amen.</span>
+                    </p>
+
+                    <p class="prayer-text">O Lord, hear our prayer;</p>
+                    <p class="prayer-text response">And let our cry come unto thee.</p>
                 </div>`,
       },
       {
-        type: "crucifixion",
+        type: "collect",
         content: `<div class="section">
-                    <p class="prayer-text center"><em>And I, if I be lifted up, will draw all men unto me.</em></p>
+                    <p class="prayer-text">
+                        Blessed Saviour, who at this hour didst hang upon the Cross, stretching out thy loving arms: Grant that all mankind may look unto thee and be saved; who livest and reignest with the Father and the Holy Ghost, one God, world without end. <span class="response">Amen.</span>
+                    </p>
 
-                    <p class="prayer-text">Blessed Saviour, who at this hour didst hang upon the cross stretching out thy loving arms: Grant that all the peoples of the earth may look unto thee and be saved; who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. <span class="response">Amen.</span></p>
-                </div>`,
-      },
-      {
-        type: "paul",
-        content: `<div class="section">
-                    <p class="prayer-text center"><em>At mid-day, O king, I saw a light above the brightness of the sun.</em></p>
-
-                    <p class="prayer-text">Almighty Saviour, who at mid-day didst call thy servant Saint Paul to be an Apostle to the Gentiles: We beseech thee to illumine the world with the radiance of thy glory, that all nations may come and worship thee; who livest and reignest with the Father and the Holy Ghost, ever one God, world without end. <span class="response">Amen.</span></p>
-                </div>`,
-      },
-      {
-        type: "peter",
-        content: `<div class="section">
-                    <p class="prayer-text center"><em>Peter went up upon the house-top to pray, about the sixth hour.</em></p>
-
-                    <p class="prayer-text">Father of mercies, who to thine Apostle Saint Peter didst reveal in three-fold vision thy boundless compassion: Forgive, we pray thee, our unbelief, and so enlarge our hearts, and enkindle our zeal, that we may fervently desire the salvation of all men, and with more ready diligence labour in the extension of thy kingdom; for his sake, who gave himself for the life of the world, thy Son our Saviour Jesus Christ. <span class="response">Amen.</span></p>
+                    <p class="prayer-text">
+                        The grace of our Lord Jesus Christ, and the love of God, and the fellowship of the Holy Ghost, be with us all evermore. <span class="response">Amen.</span>
+                    </p>
                 </div>`,
       },
     ],
