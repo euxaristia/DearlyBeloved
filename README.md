@@ -1,6 +1,6 @@
 # 📖 PrexCommunis
 
-A web app for praying the Daily Office from the Book of Common Prayer (1662/1962 Canadian).
+A web app for praying the Daily Office from the 1662 Book of Common Prayer.
 
 ## Features
 

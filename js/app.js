@@ -6,10 +6,8 @@ const prayerData = {
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">The Minister shall read aloud one or more of these Sentences of the Scriptures that follow.</p>
+                    <p class="rubric">At the beginning of Morning Prayer the Minister shall read with a loud voice some one or more of these Sentences of the Scriptures that follow.</p>
                     <p class="prayer-text">Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race which is set before us, looking unto Jesus the author and finisher of our faith. <span class="rubric">Hebrews 12. 1, 2.</span></p>
-
-                    <p class="rubric">The Minister, turning to the people, shall say the Exhortation in the form following. Occasionally the second paragraph may be omitted.</p>
 
                     <p class="prayer-text">Dearly beloved brethren, the Scripture moveth us in sundry places to acknowledge and confess our manifold sins and wickedness; and that we should not dissemble nor cloke them before the face of Almighty God our heavenly Father; but confess them with an humble, lowly, penitent, and obedient heart; to the end that we may obtain forgiveness of the same, by his infinite goodness and mercy.</p>
 
@@ -17,12 +15,13 @@ const prayerData = {
 
                     <p class="prayer-text">Wherefore I pray and beseech you, as many as are here present, to accompany me with a pure heart and humble voice unto the throne of the heavenly grace.</p>
 
-                    <p class="rubric">A general Confession to be said of the whole Congregation with the Minister, all kneeling.</p>
+                    <p class="rubric">A general Confession to be said of the whole Congregation after the Minister, all kneeling.</p>
                     <p class="prayer-text response">Almighty and most merciful Father, We have erred and strayed from thy ways like lost sheep, We have followed too much the devices and desires of our own hearts, We have offended against thy holy laws, We have left undone those things which we ought to have done, And we have done those things which we ought not to have done; And there is no health in us. But thou, O Lord, have mercy upon us, miserable offenders. Spare thou them, O God, which confess their faults. Restore thou them that are penitent; According to thy promises declared unto mankind in Christ Jesu our Lord. And grant, O most merciful Father, for his sake, That we may hereafter live a godly, righteous, and sober life, To the glory of thy holy Name. Amen.</p>
 
-                    <p class="prayer-text">O Lord, we beseech thee, absolve thy people from their offences; that through thy bountiful goodness we may all be delivered from the bands of those sins, which by our frailty we have committed. Grant this, O heavenly Father, for Jesus Christ's sake, our blessed Lord and Saviour. <span class="response">Amen.</span></p>
+                    <p class="rubric">The Absolution, or Remission of sins, to be pronounced by the Priest alone, standing; the people still kneeling.</p>
+                    <p class="prayer-text">Almighty God, the Father of our Lord Jesus Christ, who desireth not the death of a sinner, but rather that he may turn from his wickedness, and live; and hath given power, and commandment, to his Ministers, to declare and pronounce to his people, being penitent, the Absolution and Remission of their sins: He pardoneth and absolveth all them that truly repent, and unfeignedly believe his holy Gospel. Wherefore let us beseech him to grant us true repentance, and his Holy Spirit, that those things may please him, which we do at this present; and that the rest of our life hereafter may be pure, and holy; so that at the last we may come to his eternal joy; through Jesus Christ our Lord. <span class="response">Amen.</span></p>
 
-                    <p class="rubric">Here the Lord's Prayer may be said; the people repeating it with the Minister.</p>
+                    <p class="rubric">Then the Minister shall kneel, and say the Lord's Prayer with an audible voice; the people also kneeling, and repeating it with him.</p>
                     <p class="prayer-text response">Our Father who art in heaven, Hallowed be thy Name, Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread; And forgive us our trespasses, As we forgive them that trespass against us; And lead us not into temptation, But deliver us from evil. For thine is the kingdom, the power, and the glory, For ever and ever. Amen.</p>
                 </div>`,
       },
@@ -47,7 +46,7 @@ const prayerData = {
                         <span class="response">O Lord, make haste to help us.</span>
                     </div>
 
-                    <p class="rubric">Here, all standing up, the Minister shall say:</p>
+                    <p class="rubric">Here all standing up, the Priest shall say,</p>
                     <p class="prayer-text">Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                     <div class="versicle">
                         <span class="people-label">People.</span>
@@ -93,14 +92,14 @@ const prayerData = {
       {
         type: "psalm",
         content: `<div class="section">
-                    <p class="rubric">Then shall follow THE PSALMS.</p>
+                    <p class="rubric">Then shall follow the Psalms in order as they be appointed.</p>
                     <!-- Psalms dynamically injected here -->
                 </div>`,
       },
       {
         type: "first-lesson",
         content: `<div class="section">
-                    <p class="rubric">Then shall be read THE FIRST LESSON as appointed, and before each Lesson the Minister shall say, The First [or Second] Lesson is written in such a book, in such a chapter, beginning at such a verse. And after the Lesson he shall say, Here endeth the First [or Second] Lesson.</p>
+                    <p class="rubric">Then shall be read distinctly with an audible voice the First Lesson, taken out of the Old Testament, as is appointed in the Kalendar, except there be proper Lessons assigned for that day.</p>
                     <!-- First lesson dynamically injected here -->
                 </div>`,
       },
@@ -150,7 +149,7 @@ const prayerData = {
       {
         type: "second-lesson",
         content: `<div class="section">
-                    <p class="rubric">Then shall be read in like manner THE SECOND LESSON as appointed; and after that the following Canticle, except when it forms part of the Gospel or Second Lesson appointed for the day.</p>
+                    <p class="rubric">Then shall be read in like manner the Second Lesson, taken out of the New Testament.</p>
                     <!-- Second lesson dynamically injected here -->
                 </div>`,
       },
@@ -181,7 +180,7 @@ const prayerData = {
       {
         type: "creed",
         content: `<div class="section">
-                    <p class="rubric">Then shall be said or sung the Confession of the Faith, called the Apostles' Creed.</p>
+                    <p class="rubric">Then shall be sung or said the Apostles' Creed by the Minister and the people standing.</p>
                     <p class="prayer-text response">
                         I Believe in God the Father Almighty, Maker of heaven and earth:<br>
                         And in Jesus Christ his only Son our Lord, Who was conceived by the Holy Ghost, Born of the Virgin Mary, Suffered under Pontius Pilate, Was crucified, dead, and buried: He descended into hell; The third day he rose again from the dead; He ascended into heaven, And sitteth on the right hand of God the Father Almighty; From thence he shall come to judge the quick and the dead.<br>
@@ -192,7 +191,7 @@ const prayerData = {
       {
         type: "prayers",
         content: `<div class="section">
-                    <p class="rubric">And after the Creed these prayers following, all devoutly kneeling, the Minister first pronouncing:</p>
+                    <p class="rubric">And after that these Prayers following, all devoutly kneeling; the Minister first pronouncing with a loud voice,</p>
 
                     <div class="versicle">
                         <span>The Lord be with you;</span>
@@ -275,7 +274,7 @@ const prayerData = {
       {
         type: "collects",
         content: `<div class="section">
-                    <p class="rubric">Then shall follow THE COLLECT OF THE DAY, together with any other Collects appointed to be said, and these two prayers in order.</p>
+                    <p class="rubric">Then shall follow three Collects; the first of the Day; the second for Peace; the third for Grace.</p>
                     <div class="collect">
                         <p class="collect-title">The Collect of the Day</p>
                         <p class="prayer-text">
@@ -297,7 +296,7 @@ const prayerData = {
                         </p>
                     </div>
 
-                    <p class="rubric">Here may follow an Anthem or an Hymn.</p>
+                    <p class="rubric">In Quires and Places where they sing, here followeth the Anthem.</p>
                 </div>`,
       },
       {
@@ -378,38 +377,24 @@ const prayerData = {
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">The Minister shall read aloud one or more of these Sentences of the Scriptures that follow, or at special seasons the appropriate Sentences in Morning Prayer.</p>
+                    <p class="rubric">At the beginning of Evening Prayer the Minister shall read with a loud voice some one or more of these Sentences of the Scriptures that follow.</p>
 
-                    <p class="prayer-text"><em>Of Missions.</em> Go ye into all the world, and preach the Gospel to every creature.</p>
-                    <p class="rubric">St. Mark 16. 15.</p>
-
-                    <p class="rubric">The Minister, turning to the people, shall say the Exhortation in the form following. Occasionally the second paragraph may be omitted.</p>
+                    <p class="prayer-text">Go ye into all the world, and preach the Gospel to every creature. <span class="rubric">St. Mark 16. 15.</span></p>
 
                     <p class="prayer-text">Dearly beloved brethren, the Scripture moveth us in sundry places to acknowledge and confess our manifold sins and wickedness; and that we should not dissemble nor cloke them before the face of Almighty God our heavenly Father; but confess them with an humble, lowly, penitent, and obedient heart; to the end that we may obtain forgiveness of the same, by his infinite goodness and mercy.</p>
 
                     <p class="prayer-text">And although we ought at all times humbly to acknowledge our sins before God; yet ought we most chiefly so to do, when we assemble and meet together to render thanks for the great benefits that we have received at his hands, to set forth his most worthy praise, to hear his most holy Word, and to ask those things which are requisite and necessary, as well for the body as the soul.</p>
 
-                    <p class="rubric">The following Confession of Sin may then be said; or the Office may continue at once with "O God, make speed to save us."</p>
+                    <p class="prayer-text">Wherefore I pray and beseech you, as many as are here present, to accompany me with a pure heart and humble voice unto the throne of the heavenly grace.</p>
 
-                    <p class="rubric">Confession of Sin</p>
-                    <p class="prayer-text indent">Almighty and most merciful Father,<br>
-                    we have erred and strayed from thy ways like lost sheep,<br>
-                    we have followed too much the devices and desires of our own hearts,<br>
-                    we have offended against thy holy laws,<br>
-                    we have left undone those things which we ought to have done,<br>
-                    and we have done those things which we ought not to have done.<br>
-                    And there is no health in us.<br>
-                    But thou, O Lord, have mercy upon us,<br>
-                    spare thou those who confess their faults,<br>
-                    restore thou those who are penitent,<br>
-                    according to thy promises declared unto mankind<br>
-                    in Christ Jesus our Lord;<br>
-                    and grant, O most merciful Father, for his sake,<br>
-                    that we may hereafter live a godly, righteous, and sober life,<br>
-                    to the glory of thy holy Name. Amen.</p>
+                    <p class="rubric">A general Confession to be said of the whole Congregation after the Minister, all kneeling.</p>
+                    <p class="prayer-text response">Almighty and most merciful Father, We have erred and strayed from thy ways like lost sheep, We have followed too much the devices and desires of our own hearts, We have offended against thy holy laws, We have left undone those things which we ought to have done, And we have done those things which we ought not to have done; And there is no health in us. But thou, O Lord, have mercy upon us, miserable offenders. Spare thou them, O God, which confess their faults. Restore thou them that are penitent; According to thy promises declared unto mankind in Christ Jesu our Lord. And grant, O most merciful Father, for his sake, That we may hereafter live a godly, righteous, and sober life, To the glory of thy holy Name. Amen.</p>
 
-                    <p class="rubric">The Priest alone stands and says</p>
-                    <p class="prayer-text">The Almighty and merciful Lord grant you absolution and remission of all your sins, true repentance, amendment of life, and the grace and consolation of his Holy Spirit. <span class="response">Amen.</span></p>
+                    <p class="rubric">The Absolution, or Remission of sins, to be pronounced by the Priest alone, standing; the people still kneeling.</p>
+                    <p class="prayer-text">Almighty God, the Father of our Lord Jesus Christ, who desireth not the death of a sinner, but rather that he may turn from his wickedness, and live; and hath given power, and commandment, to his Ministers, to declare and pronounce to his people, being penitent, the Absolution and Remission of their sins: He pardoneth and absolveth all them that truly repent, and unfeignedly believe his holy Gospel. Wherefore let us beseech him to grant us true repentance, and his Holy Spirit, that those things may please him, which we do at this present; and that the rest of our life hereafter may be pure, and holy; so that at the last we may come to his eternal joy; through Jesus Christ our Lord. <span class="response">Amen.</span></p>
+
+                    <p class="rubric">Then the Minister shall kneel, and say the Lord's Prayer; the people also kneeling, and repeating it with him.</p>
+                    <p class="prayer-text response">Our Father who art in heaven, Hallowed be thy Name, Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread; And forgive us our trespasses, As we forgive them that trespass against us; And lead us not into temptation, But deliver us from evil. For thine is the kingdom, the power, and the glory, For ever and ever. Amen.</p>
                 </div>`,
       },
       {
@@ -424,7 +409,7 @@ const prayerData = {
                         <span class="response">O Lord, make haste to help us.</span>
                     </div>
 
-                    <p class="rubric">Here, all standing up, the Minister shall say:</p>
+                    <p class="rubric">Here all standing up, the Priest shall say,</p>
                     <p class="prayer-text">Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
                     <div class="versicle">
                         <span class="people-label">People.</span>
@@ -443,21 +428,21 @@ const prayerData = {
       {
         type: "psalm",
         content: `<div class="section">
-                    <p class="rubric">Then shall follow THE PSALMS.</p>
+                    <p class="rubric">Then shall follow the Psalms in order as they be appointed.</p>
                     <!-- Psalms dynamically injected here -->
                 </div>`,
       },
       {
         type: "first-lesson",
         content: `<div class="section">
-                    <p class="rubric">Then shall be read THE FIRST LESSON as appointed, and before each Lesson the Minister shall say, The First [or Second] Lesson is written in such a book, in such a chapter, beginning at such a verse. And after the Lesson he shall say, Here endeth the First [or Second] Lesson.</p>
+                    <p class="rubric">Then shall be read distinctly with an audible voice the First Lesson, taken out of the Old Testament, as is appointed in the Kalendar, except there be proper Lessons assigned for that day.</p>
                     <!-- First lesson dynamically injected here -->
                 </div>`,
       },
       {
         type: "magnificat",
         content: `<div class="section">
-                    <p class="rubric">After the First Lesson shall be sung or said the Hymn Te Deum Laudamus, or this Canticle.</p>
+                    <p class="rubric">And after that, Magnificat (or the Song of the blessed Virgin Mary) in English, as followeth.</p>
                     <div class="canticle">
                         <h3 class="canticle-title">Magnificat. St Luke 1:46</h3>
                         <p class="prayer-text">
@@ -479,13 +464,14 @@ const prayerData = {
       {
         type: "second-lesson",
         content: `<div class="section">
-                    <p class="rubric">Then shall be read in like manner THE SECOND LESSON as appointed; and after that the following Canticle, except when it forms part of the Gospel or Second Lesson appointed for the day.</p>
+                    <p class="rubric">Then shall be read in like manner the Second Lesson, taken out of the New Testament.</p>
                     <!-- Second lesson dynamically injected here -->
                 </div>`,
       },
       {
         type: "nunc-dimittis",
         content: `<div class="section">
+                    <p class="rubric">And after that, Nunc dimittis (or the Song of Simeon) in English, as followeth.</p>
                     <div class="canticle">
                         <h3 class="canticle-title">Nunc Dimittis. St Luke 2:29</h3>
                         <p class="prayer-text">
@@ -502,7 +488,7 @@ const prayerData = {
       {
         type: "creed",
         content: `<div class="section">
-                    <p class="rubric">Then shall be said or sung the Confession of the Faith, called the Apostles' Creed.</p>
+                    <p class="rubric">Then shall be sung or said the Apostles' Creed by the Minister and the people standing.</p>
                     <p class="prayer-text response">
                         I Believe in God the Father Almighty, Maker of heaven and earth:<br>
                         And in Jesus Christ his only Son our Lord, Who was conceived by the Holy Ghost, Born of the Virgin Mary, Suffered under Pontius Pilate, Was crucified, dead, and buried: He descended into hell; The third day he rose again from the dead; He ascended into heaven, And sitteth on the right hand of God the Father Almighty; From thence he shall come to judge the quick and the dead.<br>
@@ -513,7 +499,7 @@ const prayerData = {
       {
         type: "prayers",
         content: `<div class="section">
-                    <p class="rubric">The people kneel. The Officiant says to the people</p>
+                    <p class="rubric">And after that these Prayers following, all devoutly kneeling; the Minister first pronouncing with a loud voice,</p>
                     <div class="versicle">
                         <span>The Lord be with you;</span>
                     </div>
@@ -595,7 +581,7 @@ const prayerData = {
       {
         type: "collects",
         content: `<div class="section">
-                    <p class="rubric">Then shall follow THE COLLECT OF THE DAY, together with any other Collects appointed to be said, and these two prayers in order.</p>
+                    <p class="rubric">Then shall follow three Collects; the first of the Day; the second for Peace; the third for Aid against all Perils.</p>
                     <div class="collect">
                         <p class="collect-title">The Collect of the Day</p>
                         <p class="prayer-text">
@@ -604,13 +590,20 @@ const prayerData = {
                     </div>
 
                     <div class="collect">
-                        <p class="collect-title">The Second Collect, for Peace.</p>
+                        <p class="collect-title">The Second Collect at Evening Prayer.</p>
                         <p class="prayer-text">
-                            O God, who art the author of peace and lover of concord, in knowledge of whom standeth our eternal life, whose service is perfect freedom: Defend us thy humble servants in all assaults of our enemies; that we, surely trusting in thy defence, may not fear the power of any adversaries; through the might of Jesus Christ our Lord. <span class="response">Amen.</span>
+                            O God, from whom all holy desires, all good counsels, and all just works do proceed: Give unto thy servants that peace which the world cannot give; that both our hearts may be set to obey thy commandments, and also that by thee we being defended from the fear of our enemies may pass our time in rest and quietness; through the merits of Jesus Christ our Saviour. <span class="response">Amen.</span>
                         </p>
                     </div>
 
-                    <p class="rubric">Here may follow an Anthem or an Hymn.</p>
+                    <div class="collect">
+                        <p class="collect-title">The Third Collect, for Aid against all Perils.</p>
+                        <p class="prayer-text">
+                            Lighten our darkness, we beseech thee, O Lord; and by thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Saviour, Jesus Christ. <span class="response">Amen.</span>
+                        </p>
+                    </div>
+
+                    <p class="rubric">In Quires and Places where they sing, here followeth the Anthem.</p>
                 </div>`,
       },
       {
@@ -740,11 +733,14 @@ const prayerData = {
       {
         type: "opening",
         content: `<div class="section">
-                    <p class="rubric">This Service may be used when Evening Prayer has been previously said.</p>
+                    <p class="rubric">The Office of Compline may be used after Evening Prayer, or as a separate late evening devotion.</p>
 
-                    <p class="rubric">All standing up, the Minister shall say:</p>
+                    <p class="rubric">The Minister beginneth:</p>
 
                     <p class="prayer-text">The Lord Almighty grant us a quiet night and a perfect end. <span class="response">Amen.</span></p>
+
+                    <p class="rubric">Then shall be read this Sentence:</p>
+                    <p class="prayer-text">Brethren, be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour: whom resist, stedfast in the faith. <span class="rubric">1 St Peter 5. 8, 9.</span></p>
 
                     <p class="prayer-text">O God, make speed to save us;</p>
                     <p class="prayer-text indent"><em>Answer</em> <span class="response">O Lord, make haste to help us.</span></p>
@@ -844,7 +840,7 @@ const prayerData = {
                     <p class="prayer-text"><em>Minister</em> O Lord, show thy mercy upon us;</p>
                     <p class="prayer-text indent"><em>Answer</em> <span class="response">And grant us thy salvation.</span></p>
 
-                    <p class="prayer-text"><em>Minister</em> O Lord, save the Queen;</p>
+                    <p class="prayer-text"><em>Minister</em> O Lord, save the King;</p>
                     <p class="prayer-text indent"><em>Answer</em> <span class="response">And mercifully hear us when we call upon thee.</span></p>
 
                     <p class="prayer-text"><em>Minister</em> Endue thy Ministers with righteousness;</p>
@@ -870,11 +866,11 @@ const prayerData = {
                     </p>
 
                     <p class="prayer-text">
-                        Be our light in the darkness, O Lord, and in thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Saviour Jesus Christ. <span class="response">Amen.</span>
+                        Visit, we beseech thee, O Lord, this habitation, and drive far from it all the snares of the enemy; let thy holy angels dwell herein to preserve us in peace; and let thy blessing be upon us evermore; through Jesus Christ our Lord. <span class="response">Amen.</span>
                     </p>
 
                     <p class="prayer-text">
-                        Visit, we beseech thee, O Lord, this place, and drive far from it all the snares of the enemy; let thy holy angels dwell herein to preserve us in peace; and may thy blessing be upon us evermore; through Jesus Christ our Lord. <span class="response">Amen.</span>
+                        Look down, O Lord, from thy heavenly throne, illuminate the darkness of this night with thy celestial brightness, and from the sons of light banish the deeds of darkness; through Jesus Christ our Lord. <span class="response">Amen.</span>
                     </p>
 
                     <p class="rubric">The Minister may here end with the Blessing, or he may add other Prayers.</p>
@@ -1664,23 +1660,23 @@ function injectReadings(office) {
 
   if (officeReadings) {
     firstLessonSection.innerHTML = `
-      <p class="rubric">Then shall be read THE FIRST LESSON as appointed, and before each Lesson the Minister shall say, The First [or Second] Lesson is written in such a book, in such a chapter, beginning at such a verse. And after the Lesson he shall say, Here endeth the First [or Second] Lesson.</p>
+      <p class="rubric">Then shall be read distinctly with an audible voice the First Lesson, taken out of the Old Testament, as is appointed in the Kalendar, except there be proper Lessons assigned for that day.</p>
       ${buildReadingInstructions('first', officeReadings.first)}
     `;
 
     secondLessonSection.innerHTML = `
-      <p class="rubric">Then shall be read in like manner THE SECOND LESSON as appointed; and after that the following Canticle, except when it forms part of the Gospel or Second Lesson appointed for the day.</p>
+      <p class="rubric">Then shall be read in like manner the Second Lesson, taken out of the New Testament.</p>
       ${buildReadingInstructions('second', officeReadings.second)}
     `;
   } else {
     // Fallback if no readings found
     firstLessonSection.innerHTML = `
-      <p class="rubric">Then shall be read THE FIRST LESSON as appointed, and before each Lesson the Minister shall say, The First [or Second] Lesson is written in such a book, in such a chapter, beginning at such a verse. And after the Lesson he shall say, Here endeth the First [or Second] Lesson.</p>
+      <p class="rubric">Then shall be read distinctly with an audible voice the First Lesson, taken out of the Old Testament, as is appointed in the Kalendar, except there be proper Lessons assigned for that day.</p>
       <p class="error-message">No readings found for today.</p>
     `;
 
     secondLessonSection.innerHTML = `
-      <p class="rubric">Then shall be read in like manner THE SECOND LESSON as appointed; and after that the following Canticle, except when it forms part of the Gospel or Second Lesson appointed for the day.</p>
+      <p class="rubric">Then shall be read in like manner the Second Lesson, taken out of the New Testament.</p>
       <p class="error-message">No readings found for today.</p>
     `;
   }
@@ -1782,7 +1778,7 @@ async function injectPsalms(office) {
 
   // Show loading state
   psalmSection.innerHTML = `
-    <p class="rubric">Then shall follow THE PSALMS.</p>
+    <p class="rubric">Then shall follow the Psalms in order as they be appointed.</p>
     <p class="loading-text">Loading Psalms...</p>
   `;
 
@@ -1795,7 +1791,7 @@ async function injectPsalms(office) {
     ).join('');
 
     psalmSection.innerHTML = `
-      <p class="rubric">Then shall follow THE PSALMS.</p>
+      <p class="rubric">Then shall follow the Psalms in order as they be appointed.</p>
       ${psalmsHtml}
       <div class="gloria">
         <p>Glory be to the Father, and to the Son, and to the Holy Ghost;</p>
@@ -1807,7 +1803,7 @@ async function injectPsalms(office) {
     const psalmRefs = getPsalmReferences(office);
     const refList = psalmRefs.map(ref => ref.title).join(', ');
     psalmSection.innerHTML = `
-      <p class="rubric">Then shall follow THE PSALMS.</p>
+      <p class="rubric">Then shall follow the Psalms in order as they be appointed.</p>
       <div class="psalm">
         <p class="psalm-title">${refList}</p>
         <p class="scripture-fallback"><em>Psalm text could not be loaded.</em></p>
@@ -1888,7 +1884,7 @@ function injectCollects() {
 
   // Create the collect HTML
   const collectHtml = `
-    <p class="rubric">Then shall follow THE COLLECT OF THE DAY, together with any other Collects appointed to be said, and these two prayers in order.</p>
+    <p class="rubric">Then shall follow three Collects; the first of the Day; the second for Peace; the third for Grace.</p>
     <div class="collect">
       <p class="collect-title">The Collect of the Day</p>
       <p class="prayer-text">
@@ -1903,7 +1899,7 @@ function injectCollects() {
       </p>
     </div>
 
-    <p class="rubric">Here may follow an Anthem or an Hymn.</p>
+    <p class="rubric">In Quires and Places where they sing, here followeth the Anthem.</p>
   `;
 
   collectsSection.innerHTML = collectHtml;
