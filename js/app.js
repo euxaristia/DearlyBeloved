@@ -1344,11 +1344,12 @@ function setupEventListeners() {
 
       // Get office type and render
       currentOffice = button.dataset.office;
-      
+
       // Store the user's office preference
       localStorage.setItem('selected-office', currentOffice);
-      
+
       renderPrayer(currentOffice);
+      updateOfficeSwitchButton();
 
       // Scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2107,11 +2108,12 @@ function setupSidebar() {
       // Get office and render
       const office = item.dataset.office;
       currentOffice = office;
-      
+
       // Store the user's office preference
       localStorage.setItem('selected-office', office);
-      
+
       renderPrayer(office);
+      updateOfficeSwitchButton();
 
       // Close sidebar on mobile after selection
       if (window.innerWidth < 768) {
