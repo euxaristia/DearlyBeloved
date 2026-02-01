@@ -10,19 +10,11 @@ export function AppProvider({ children }) {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
 
-  // Sidebar State
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    const saved = localStorage.getItem('sidebar-open');
-    const isMobile = window.innerWidth < 768;
-    // On mobile, default closed. On desktop, default open unless saved otherwise.
-    if (isMobile) return false;
-    return saved !== null ? saved === 'true' : true;
-  });
+  // Sidebar State -- default closed
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Office State
+  // Office State -- always calculate based on time for fresh entry
   const [currentOffice, setCurrentOffice] = useState(() => {
-    const saved = localStorage.getItem('selected-office');
-    if (saved) return saved;
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 14) return "midday";
@@ -39,17 +31,9 @@ export function AppProvider({ children }) {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Persist sidebar state (only meaningful for desktop)
-  useEffect(() => {
-    localStorage.setItem('sidebar-open', isSidebarOpen);
-    // Helper attribute for CSS if needed (though we prefer React state)
-    document.documentElement.setAttribute('data-sidebar-open', isSidebarOpen);
-  }, [isSidebarOpen]);
-
-  // Persist office
-  useEffect(() => {
-    localStorage.setItem('selected-office', currentOffice);
-  }, [currentOffice]);
+  // Persist sidebar state (remove this if we always want closed default, but user said 'default closed', so let's removing persistence for sidebar state might be safer to ensure it obeys 'default')
+  // We will remove the sidebar persistence to strictly follow "default panel closed".
+  // Only persisting theme now.
 
   // Handle Resize
   useEffect(() => {
