@@ -143,13 +143,13 @@ export default function LectionaryView() {
                         <div className="lesson-item">
                             <LessonDisplay
                                 reference={currentReadings.first}
-                                lessonNumber="first"
+                                lesson="first"
                             />
                         </div>
                         <div className="lesson-item">
                             <LessonDisplay
                                 reference={currentReadings.second}
-                                lessonNumber="second"
+                                lesson="second"
                             />
                         </div>
                     </div>
