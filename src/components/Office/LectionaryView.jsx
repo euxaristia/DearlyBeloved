@@ -4,6 +4,7 @@ import { getReadingsForDate } from '../../utils/lectionary';
 import { getPsalmReferences, getPsalmLatinTitle } from '../../utils/psalms';
 import { getCollectForDate } from '../../utils/collects';
 import LessonDisplay from './Parts/LessonDisplay';
+import { Calendar } from 'lucide-react';
 import './LectionaryView.css';
 
 export default function LectionaryView() {
@@ -83,7 +84,7 @@ export default function LectionaryView() {
                         id="date-input"
                     />
                     <label htmlFor="date-input" className="date-label">
-                        {selectedDate} <span className="calendar-icon">📅</span>
+                        {selectedDate} <Calendar className="calendar-icon" size={20} />
                     </label>
                 </div>
                 <button onClick={() => changeDate(1)} className="nav-arrow" aria-label="Next Day">→</button>
