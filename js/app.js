@@ -1015,7 +1015,23 @@ function updateOfficeSwitchButton() {
   if (currentOffice === appropriateOffice) {
     officeSwitchBtn.classList.add('hidden');
   } else {
-    officeSwitchBtn.classList.remove('hidden');
+    const wasHidden = officeSwitchBtn.classList.contains('hidden');
+
+    if (wasHidden) {
+      // Disable transitions temporarily when showing the button
+      officeSwitchBtn.style.transition = 'none';
+      officeSwitchBtn.classList.remove('hidden');
+
+      // Force reflow to ensure the button is positioned before re-enabling transitions
+      void officeSwitchBtn.offsetHeight;
+
+      // Re-enable transitions after a brief moment
+      requestAnimationFrame(() => {
+        officeSwitchBtn.style.transition = '';
+      });
+    } else {
+      officeSwitchBtn.classList.remove('hidden');
+    }
   }
 }
 
