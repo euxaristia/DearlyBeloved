@@ -688,7 +688,8 @@ html[data-sidebar-collapsed="true"] .sidebar {
     align-items: center;
     justify-content: center;
     z-index: 1001;
-    transition: all 0.2s ease;
+    /* Limit transition to transform to avoid layout drift */
+    transition: transform var(--sidebar-transition), background-color 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px var(--shadow);
 }
 
@@ -713,32 +714,35 @@ html[data-sidebar-collapsed="true"] .sidebar {
 
 /* Sidebar Toggle Button Position when Open (Desktop only) */
 @media (min-width: 768px) {
-    .sidebar-toggle.sidebar-open {
-        left: calc(var(--sidebar-width) + 20px);
+
+    /* Use transform for smooth performance and sync with sidebar */
+    .sidebar-toggle.sidebar-open,
+    html:not([data-sidebar-collapsed="true"]) .sidebar-toggle {
+        left: 20px;
+        transform: translateX(var(--sidebar-width));
     }
 
     /* Initial sidebar state based on data attribute (prevent flash) */
     html[data-sidebar-collapsed="true"] .sidebar-toggle {
         left: 20px;
+        transform: translateX(0);
     }
 
-    html:not([data-sidebar-collapsed="true"]) .sidebar-toggle {
-        left: calc(var(--sidebar-width) + 20px);
-    }
-    
-    /* Office switch button positioned to the right of sidebar toggle with proper spacing */
+    /* Office switch button positioned to the right of sidebar toggle */
     html[data-sidebar-collapsed="true"] .office-switch-btn {
-        left: 75px;
+        left: 72px;
         padding: 0 16px;
         width: auto;
         min-width: 44px;
+        transform: translateX(0);
     }
 
     html:not([data-sidebar-collapsed="true"]) .office-switch-btn {
-        left: calc(var(--sidebar-width) + 75px);
+        left: 72px;
         padding: 0 16px;
         width: auto;
         min-width: 44px;
+        transform: translateX(var(--sidebar-width));
     }
 
     .office-switch-text {
@@ -748,6 +752,7 @@ html[data-sidebar-collapsed="true"] .sidebar {
 
 /* Responsive adjustments for smaller desktop windows */
 @media (min-width: 768px) and (max-width: 1024px) {
+
     /* On smaller desktop screens, reduce padding to prevent overlap */
     .office-switch-btn {
         padding: 0 12px;
@@ -755,12 +760,10 @@ html[data-sidebar-collapsed="true"] .sidebar {
     }
 
     /* Ensure minimum safe distance between buttons */
-    html[data-sidebar-collapsed="true"] .office-switch-btn {
-        left: 75px;
-    }
-
+    /* Maintain static position and let transform handle movement */
+    html[data-sidebar-collapsed="true"] .office-switch-btn,
     html:not([data-sidebar-collapsed="true"]) .office-switch-btn {
-        left: calc(var(--sidebar-width) + 75px);
+        left: 72px;
     }
 }
 
@@ -768,7 +771,7 @@ html[data-sidebar-collapsed="true"] .sidebar {
 .office-switch-btn {
     position: fixed;
     top: 20px;
-    left: 70px;
+    left: 72px;
     right: auto;
     height: 40px;
     border: none;
@@ -781,7 +784,8 @@ html[data-sidebar-collapsed="true"] .sidebar {
     padding: 0 16px;
     gap: 8px;
     z-index: 1002;
-    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Limit transition to transform to avoid layout drift */
+    transition: transform var(--sidebar-transition), background-color 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px var(--shadow);
     font-family: inherit;
     font-size: 14px;
@@ -819,11 +823,11 @@ html[data-sidebar-collapsed="true"] .sidebar {
         padding: 0 12px;
         font-size: 12px;
     }
-    
+
     .office-switch-text {
         display: none;
     }
-    
+
     .office-switch-btn {
         width: 40px;
         border-radius: 8px;
@@ -892,7 +896,7 @@ html[data-sidebar-collapsed="true"] .app-container {
         right: auto;
         width: 44px;
         height: 44px;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .sidebar-toggle.sidebar-open {
@@ -902,12 +906,12 @@ html[data-sidebar-collapsed="true"] .app-container {
     /* Office switch button on mobile - default closed state */
     .office-switch-btn {
         top: calc(10px + env(safe-area-inset-top));
-        left: calc(62px + env(safe-area-inset-left)) !important;
+        left: calc(64px + env(safe-area-inset-left)) !important;
         width: 44px;
         height: 44px;
         padding: 0;
         border-radius: 8px;
-        transition: transform 0.2s ease-in-out !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         z-index: 1002;
     }
 
@@ -1090,20 +1094,20 @@ html[data-sidebar-collapsed="true"] .app-container {
         gap: 12px;
         align-items: stretch;
     }
-    
+
     .reading-reference {
         text-align: center;
     }
-    
+
     .bible-reference {
         flex-direction: column;
         gap: 8px;
     }
-    
+
     .reading-instructions {
         padding: 16px;
     }
-    
+
     .instruction-box {
         padding: 12px;
     }
@@ -1115,43 +1119,43 @@ html[data-sidebar-collapsed="true"] .app-container {
         width: 44px;
         height: 44px;
     }
-    
+
     .sidebar-toggle {
         width: 44px;
         height: 44px;
     }
-    
+
     .office-switch-btn {
         width: 44px;
         height: 44px;
     }
-    
+
     body {
         font-size: 20px;
     }
-    
+
     header h1 {
         font-size: 2rem;
         margin-top: 70px;
     }
-    
+
     .app-container {
         padding: 8px;
         padding-top: 15px;
     }
-    
+
     main {
         padding: 12px;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .section-subtitle {
         font-size: 1rem;
     }
-    
+
     .date-display {
         padding: 12px;
         margin-bottom: 20px;
@@ -1164,16 +1168,50 @@ html[data-sidebar-collapsed="true"] .app-container {
         min-height: 48px;
         padding: 12px 20px;
     }
-    
+
     .nav-btn {
         min-height: 44px;
         padding: 10px 16px;
         font-size: 0.9rem;
     }
-    
+
     .install-btn,
     .dismiss-btn {
         min-height: 44px;
         padding: 12px 20px;
+    }
+}
+
+/* Fix for transform conflict when hovering open buttons */
+/* The base hover effect uses scale() which overwrites the translateX() used for positioning.
+   These rules explicitly combine them. */
+
+/* Sidebar Toggle - Open State Hover/Active */
+.sidebar-toggle.sidebar-open:hover {
+    transform: translateX(var(--sidebar-width)) scale(1.05);
+}
+
+.sidebar-toggle.sidebar-open:active {
+    transform: translateX(var(--sidebar-width)) scale(0.95);
+}
+
+/* Office Switch Button - Mobile Open State Hover/Active */
+.office-switch-btn.sidebar-open:hover {
+    transform: translateX(var(--sidebar-width)) scale(1.02);
+}
+
+.office-switch-btn.sidebar-open:active {
+    transform: translateX(var(--sidebar-width)) scale(0.98);
+}
+
+/* Office Switch Button - Desktop Open State Hover/Active */
+/* On desktop, this button moves based on the HTML attribute, not a class */
+@media (min-width: 768px) {
+    html:not([data-sidebar-collapsed="true"]) .office-switch-btn:hover {
+        transform: translateX(var(--sidebar-width)) scale(1.02);
+    }
+
+    html:not([data-sidebar-collapsed="true"]) .office-switch-btn:active {
+        transform: translateX(var(--sidebar-width)) scale(0.98);
     }
 }

@@ -1,0 +1,160 @@
+:root {
+  --primary-bg: #e6dfcf;
+  --secondary-bg: #dcd2bb;
+  --text-primary: #3a3a3a;
+  --text-secondary: #5d5d5d;
+  --rubric-color: #a94442;
+  --accent-color: #8b6914;
+  --border-color: #c4b89e;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --page-color: #f0e9d2;
+}
+
+/* Sidebar variables */
+:root {
+  --sidebar-width: 240px;
+  --sidebar-bg: rgba(42, 42, 42, 0.98);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-active: rgba(139, 105, 20, 0.15);
+  --sidebar-text: rgba(255, 255, 255, 0.9);
+  --sidebar-text-secondary: rgba(255, 255, 255, 0.6);
+  --sidebar-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode colors */
+.dark-mode {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2a2a2a;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --rubric-color: #d89090;
+  --accent-color: #d4a853;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --page-color: #222222;
+  --sidebar-bg: rgba(28, 28, 30, 0.98);
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --sidebar-active: rgba(212, 168, 83, 0.15);
+}
+
+/* Light mode sidebar override (when not dark mode) */
+:root:not(.dark-mode) {
+  --sidebar-bg: rgba(240, 233, 210, 0.98);
+  --sidebar-border: rgba(0, 0, 0, 0.1);
+  --sidebar-hover: rgba(0, 0, 0, 0.05);
+  --sidebar-active: rgba(139, 105, 20, 0.1);
+  --sidebar-text: rgba(0, 0, 0, 0.85);
+  --sidebar-text-secondary: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  background-color: var(--primary-bg);
+  min-height: 100vh;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Import fonts via CSS or keep in index.html - we need to ensure index.html includes them */
+/* We will handle fonts in index.html (Head) */
+
+main {
+  background-color: var(--page-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--shadow);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 40px;
+}
+
+/* Typography Helpers */
+.rubric {
+  color: var(--rubric-color);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin: 15px 0;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.prayer-text {
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.versicle {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+
+.versicle-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 30px;
+}
+
+.response {
+  font-weight: 600;
+}
+
+.collect {
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.collect-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-style: normal;
+}
+
+.gloria {
+  margin: 20px 0;
+  text-align: center;
+  font-style: italic;
+}
+
+.indent {
+  padding-left: 40px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  body {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
+}

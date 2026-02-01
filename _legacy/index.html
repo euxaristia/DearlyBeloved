@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" class="initializing fonts-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Common Prayer - Daily Office</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+    <link rel="manifest" href="/PrexCommunis/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Common Prayer" />
+    <script>
+        // Apply theme, sidebar state, and office selection immediately to prevent flash
+        (function () {
+            // Theme
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
+            if (
+                savedTheme === "dark" ||
+                (savedTheme === null && prefersDark)
+            ) {
+                document.documentElement.classList.add("dark-mode");
+            }
+
+            // Sidebar state (default to collapsed unless explicitly opened)
+            const sidebarOpen = localStorage.getItem('sidebar-collapsed') === 'false';
+            const isMobile = window.innerWidth < 768;
+            if (!isMobile && !sidebarOpen) {
+                document.documentElement.setAttribute('data-sidebar-collapsed', 'true');
+            }
+
+            // Determine appropriate office based on time
+            function getAppropriateOffice() {
+                const hour = new Date().getHours();
+                if (hour >= 5 && hour < 11) return "morning";
+                else if (hour >= 11 && hour < 14) return "midday";
+                else if (hour >= 14 && hour < 20) return "evening";
+                else return "compline";
+            }
+
+            // Check for stored office preference, otherwise determine by time
+            let office = localStorage.getItem('selected-office');
+            if (!office) {
+                office = getAppropriateOffice();
+            }
+            document.documentElement.setAttribute("data-initial-office", office);
+
+            // Set appropriate office icon for office switch button
+            const appropriateOffice = getAppropriateOffice();
+            const officeIcons = {
+                "morning": "🌅",
+                "midday": "☀️",
+                "evening": "🕯️",
+                "compline": "🌙"
+            };
+            document.documentElement.setAttribute(
+                "data-appropriate-office-icon",
+                officeIcons[appropriateOffice]
+            );
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            <circle cx="18" cy="6" r="1" fill="currentColor" />
+            <circle cx="20" cy="10" r="0.5" fill="currentColor" />
+            <circle cx="16" cy="4" r="0.5" fill="currentColor" />
+        </svg>
+    </button>
+
+    <!-- PWA Install Prompt -->
+    <div id="install-prompt" class="install-prompt" style="display: none;">
+        <div class="install-prompt-content">
+            <h3>Install Common Prayer</h3>
+            <p>Add to your home screen for offline access and prayer time notifications.</p>
+            <div class="install-prompt-buttons">
+                <button id="install-button" class="install-btn">Install</button>
+                <button id="install-dismiss" class="dismiss-btn">Not Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Permission Prompt -->
+    <div id="notification-prompt" class="notification-prompt" style="display: none;">
+        <div class="notification-prompt-content">
+            <h3>Enable Prayer Notifications</h3>
+            <p>Get notified at each prayer time: Morning (5 AM), Midday (11 AM), Evening (2 PM), and Compline (8 PM).
+            </p>
+            <div class="notification-prompt-buttons">
+                <button id="enable-notifications" class="install-btn">Enable</button>
+                <button id="notification-dismiss" class="dismiss-btn">Not Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation sidebar">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="3" y1="6" x2="21" y2="6" stroke-width="2" />
+            <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" />
+            <line x1="3" y1="18" x2="21" y2="18" stroke-width="2" />
+        </svg>
+    </button>
+
+    <!-- Office Switch Button -->
+    <button id="office-switch-btn" class="office-switch-btn" aria-label="Switch to current office">
+        <span class="office-switch-icon"></span>
+        <span class="office-switch-text"></span>
+    </button>
+    <script>
+        // Set initial icon based on appropriate office (prevents flash)
+        const icon = document.documentElement.getAttribute('data-appropriate-office-icon');
+        if (icon) {
+            document.querySelector('.office-switch-icon').textContent = icon;
+        }
+    </script>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Daily Offices</h3>
+                <nav class="sidebar-nav">
+                    <button class="sidebar-nav-item" data-office="morning">
+                        <span class="sidebar-nav-icon">🌅</span>
+                        <span class="sidebar-nav-label">Morning Prayer</span>
+                    </button>
+                    <button class="sidebar-nav-item" data-office="midday">
+                        <span class="sidebar-nav-icon">☀️</span>
+                        <span class="sidebar-nav-label">Midday Prayer</span>
+                    </button>
+                    <button class="sidebar-nav-item" data-office="evening">
+                        <span class="sidebar-nav-icon">🕯️</span>
+                        <span class="sidebar-nav-label">Evening Prayer</span>
+                    </button>
+                    <button class="sidebar-nav-item" data-office="compline">
+                        <span class="sidebar-nav-icon">🌙</span>
+                        <span class="sidebar-nav-label">Compline</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar Backdrop Overlay (for mobile) -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <div class="app-container" id="app-container">
+        <header>
+            <h1>Common Prayer</h1>
+            <p class="subtitle">The Daily Office</p>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn" data-office="morning">
+                Morning Prayer
+            </button>
+            <button class="nav-btn" data-office="midday">
+                Midday Prayer
+            </button>
+            <button class="nav-btn" data-office="evening">
+                Evening Prayer
+            </button>
+            <button class="nav-btn" data-office="compline">Compline</button>
+        </nav>
+
+        <div class="date-display">
+            <p id="liturgical-date"></p>
+        </div>
+
+        <main id="prayer-content">
+            <!-- Dynamic content will be inserted here -->
+        </main>
+
+        <footer>
+            <p>
+                Based on the Book of Common Prayer | App designed by
+                <a href="https://github.com/euxaristia" target="_blank" rel="noopener noreferrer">@euxaristia</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/sentences.js"></script>
+    <script src="js/psalms.js"></script>
+    <script src="js/lectionary.js"></script>
+    <script src="js/collects.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

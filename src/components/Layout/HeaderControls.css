@@ -1,0 +1,76 @@
+/* Header Controls Wrapper */
+.header-controls-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform var(--sidebar-transition);
+}
+
+.header-controls-wrapper.shifted {
+    transform: translateX(var(--sidebar-width));
+}
+
+/* On mobile, sidebar opens as overlay, but we might want buttons to move aside?
+   Legacy behavior: Mobile buttons DO move aside (slide right).
+   So the same logic applies.
+*/
+
+/* Shared Control Button Styles */
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px var(--shadow);
+    color: var(--text-primary);
+    transition: transform 0.2s ease, background-color 0.2s;
+    padding: 0;
+}
+
+.control-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+    color: white;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Office Switch specifics */
+.office-switch-btn {
+    grid-template-columns: auto 1fr;
+    width: auto;
+    /* Allow growth */
+    min-width: 40px;
+    padding: 0 10px;
+    /* Reduced padding */
+    gap: 8px;
+}
+
+.office-switch-text {
+    display: none;
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+/* Desktop: Show text */
+@media (min-width: 768px) {
+    .office-switch-btn {
+        padding: 0 16px;
+    }
+
+    .office-switch-text {
+        display: block;
+    }
+}

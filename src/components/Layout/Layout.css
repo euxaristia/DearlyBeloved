@@ -1,0 +1,85 @@
+/* Main Layout Wrapper */
+/* This element handles the 'push' animation via padding */
+.layout-wrapper {
+    min-height: 100vh;
+    transition: padding-left var(--sidebar-transition);
+    padding-left: 0;
+    position: relative;
+    background-color: var(--primary-bg);
+    /* Ensure background covers whole area */
+}
+
+/* Desktop: Push content when sidebar is open */
+@media (min-width: 768px) {
+    .layout-wrapper.sidebar-open {
+        padding-left: var(--sidebar-width);
+    }
+}
+
+/* App Container */
+/* This element handles the centering and max-width */
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .app-container {
+        padding-top: 80px;
+        /* Clear fixed buttons */
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+}

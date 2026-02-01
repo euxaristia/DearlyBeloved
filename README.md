@@ -1,39 +1,16 @@
-# 📖 PrexCommunis
+# React + Vite
 
-A web app for praying the Daily Office from the 1662 Book of Common Prayer.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- Morning and Evening Prayer with the full traditional structure
-- Psalms from the 30-day psalter cycle
-- Scripture readings from the 1662 two-year lectionary (KJV text via bible-api.com)
-- Collects selected by liturgical season
-- Works offline, installable as a PWA
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Running it
+## React Compiler
 
-Just open `index.html` in a browser. No build step, no dependencies.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-For live hosting, push to GitHub Pages.
+## Expanding the ESLint configuration
 
-## Structure
-
-```
-js/
-  app.js        - main logic, liturgical calendar, rendering
-  psalms.js     - 30-day psalm cycle data
-  lectionary.js - 1662 BCP lectionary
-  collects.js   - seasonal collects
-  sentences.js  - opening sentences
-index.html
-styles.css
-service-worker.js
-```
-
-## Tech
-
-Vanilla JS, plain CSS. No frameworks. Readings are cached in localStorage for 7 days.
-
-## License
-
-Liturgical content is public domain (BCP 1662, KJV). Code is BSD 3-Clause.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
