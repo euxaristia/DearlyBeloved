@@ -2092,7 +2092,7 @@ function setupSidebar() {
       }
 
       // Ensure consistency after toggle
-      setTimeout(() => ensureSidebarStateConsistency(), 350);
+      setTimeout(() => ensureSidebarStateConsistency(), 300);
     } else {
       // Desktop: toggle collapse
       sidebar.classList.toggle('collapsed');
