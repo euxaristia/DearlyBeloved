@@ -171,3 +171,16 @@ main {
     padding: 20px;
   }
 }
+
+/* Large screen adjustments */
+@media (min-width: 1400px) {
+  body {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1800px) {
+  body {
+    font-size: 26px;
+  }
+}
