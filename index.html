@@ -36,23 +36,33 @@
                 document.documentElement.setAttribute('data-sidebar-collapsed', 'true');
             }
 
-            // Check for stored office preference, otherwise determine by time (first visit only)
+            // Determine appropriate office based on time
+            function getAppropriateOffice() {
+                const hour = new Date().getHours();
+                if (hour >= 5 && hour < 11) return "morning";
+                else if (hour >= 11 && hour < 14) return "midday";
+                else if (hour >= 14 && hour < 20) return "evening";
+                else return "compline";
+            }
+
+            // Check for stored office preference, otherwise determine by time
             let office = localStorage.getItem('selected-office');
             if (!office) {
-                const hour = new Date().getHours();
-                if (hour >= 5 && hour < 11) {
-                    office = "morning";
-                } else if (hour >= 11 && hour < 14) {
-                    office = "midday";
-                } else if (hour >= 14 && hour < 20) {
-                    office = "evening";
-                } else {
-                    office = "compline";
-                }
+                office = getAppropriateOffice();
             }
+            document.documentElement.setAttribute("data-initial-office", office);
+
+            // Set appropriate office icon for office switch button
+            const appropriateOffice = getAppropriateOffice();
+            const officeIcons = {
+                "morning": "🌅",
+                "midday": "☀️",
+                "evening": "🕯️",
+                "compline": "🌙"
+            };
             document.documentElement.setAttribute(
-                "data-initial-office",
-                office,
+                "data-appropriate-office-icon",
+                officeIcons[appropriateOffice]
             );
         })();
     </script>
@@ -123,9 +133,16 @@
 
     <!-- Office Switch Button -->
     <button id="office-switch-btn" class="office-switch-btn" aria-label="Switch to current office">
-        <span class="office-switch-icon">🕐</span>
-        <span class="office-switch-text">Switch to Evening Prayer</span>
+        <span class="office-switch-icon"></span>
+        <span class="office-switch-text"></span>
     </button>
+    <script>
+        // Set initial icon based on appropriate office (prevents flash)
+        const icon = document.documentElement.getAttribute('data-appropriate-office-icon');
+        if (icon) {
+            document.querySelector('.office-switch-icon').textContent = icon;
+        }
+    </script>
 
     <!-- Sidebar Navigation -->
     <aside id="sidebar" class="sidebar">
