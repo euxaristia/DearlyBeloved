@@ -11,7 +11,7 @@ export default function Prayers({ collect, office }) {
                     Then the Minister shall say,
                 </p>
                 <p className="prayer-text">The Lord be with you;</p>
-                <div className="versicle">
+                <div className="versicle people-response">
                     <span className="people-label">People.</span>
                     <span className="response">And with thy spirit.</span>
                 </div>
@@ -21,7 +21,7 @@ export default function Prayers({ collect, office }) {
                 </p>
 
                 {suffrages.map((suffrage, index) => (
-                    <div key={index} className="versicle">
+                    <div key={index} className={`versicle ${suffrage.speaker === 'People' ? 'people-response' : ''}`}>
                         <span className={suffrage.speaker === 'Minister' ? 'minister-label' : 'people-label'}>
                             {suffrage.speaker}.
                         </span>

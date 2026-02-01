@@ -117,6 +117,19 @@ main {
   gap: 15px;
 }
 
+.people-response {
+  grid-template-columns: 1fr auto;
+  text-align: right;
+}
+
+.people-response span:first-child {
+  order: 2;
+}
+
+.people-response span:last-child {
+  order: 1;
+}
+
 .versicle-label {
   font-weight: 600;
   color: var(--text-secondary);
