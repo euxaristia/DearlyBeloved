@@ -420,15 +420,17 @@ export function getReadingsForDate(date) {
 }
 
 // Helper function to parse a Bible reference
+// Helper function to parse a Bible reference
 export function parseReference(ref) {
-  // Handle references like "Genesis 1:1-20", "Acts 1", "Matthew 1:18-25"
-  const match = ref.match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
+  // Handle complex references like "Genesis 46:26-47:13" or simple "Acts 1"
+  // We only really need the start chapter/verse for the intro text.
+  const match = ref.match(/^(.+?)\s+(\d+)(?::(\d+))?.*$/);
+
   if (match) {
     return {
       book: match[1],
       chapter: parseInt(match[2]),
-      verseStart: match[3] ? parseInt(match[3]) : 1,
-      verseEnd: match[4] ? parseInt(match[4]) : null
+      verseStart: match[3] ? parseInt(match[3]) : 1
     };
   }
   return null;
