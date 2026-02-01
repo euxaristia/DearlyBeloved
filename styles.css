@@ -902,7 +902,7 @@ html[data-sidebar-collapsed="true"] .app-container {
     /* Office switch button on mobile - default closed state */
     .office-switch-btn {
         top: calc(10px + env(safe-area-inset-top));
-        left: calc(70px + env(safe-area-inset-left)) !important;
+        left: calc(62px + env(safe-area-inset-left)) !important;
         width: 44px;
         height: 44px;
         padding: 0;
