@@ -2070,16 +2070,24 @@ function setupSidebar() {
     if (isMobile) {
       // Mobile: toggle overlay mode
       const wasOpen = sidebar.classList.contains('open');
+      const officeSwitchBtn = document.getElementById('office-switch-btn');
+
       sidebar.classList.remove('collapsed');
       sidebar.classList.toggle('open');
       sidebarBackdrop.classList.toggle('active');
       sidebarToggle.classList.toggle('sidebar-open');
 
-      // Update office switch button position
-      updateOfficeSwitchButtonPosition(!wasOpen);
+      // Toggle office switch button class at the same time for synchronized movement
+      if (officeSwitchBtn) {
+        if (wasOpen) {
+          officeSwitchBtn.classList.remove('sidebar-open');
+        } else {
+          officeSwitchBtn.classList.add('sidebar-open');
+        }
+      }
 
       // Ensure consistency after toggle
-      setTimeout(() => ensureSidebarStateConsistency(), 50);
+      setTimeout(() => ensureSidebarStateConsistency(), 350);
     } else {
       // Desktop: toggle collapse
       sidebar.classList.toggle('collapsed');
@@ -2109,10 +2117,16 @@ function setupSidebar() {
 
   // Close sidebar when clicking backdrop (mobile)
   sidebarBackdrop.addEventListener('click', () => {
+    const officeSwitchBtn = document.getElementById('office-switch-btn');
+
     sidebar.classList.remove('open');
     sidebarBackdrop.classList.remove('active');
     sidebarToggle.classList.remove('sidebar-open');
-    updateOfficeSwitchButtonPosition(false);
+
+    // Remove office switch button class at the same time
+    if (officeSwitchBtn) {
+      officeSwitchBtn.classList.remove('sidebar-open');
+    }
   });
 
   // Setup navigation items
@@ -2136,10 +2150,16 @@ function setupSidebar() {
 
       // Close sidebar on mobile after selection
       if (window.innerWidth < 768) {
+        const officeSwitchBtn = document.getElementById('office-switch-btn');
+
         sidebar.classList.remove('open');
         sidebarBackdrop.classList.remove('active');
         sidebarToggle.classList.remove('sidebar-open');
-        updateOfficeSwitchButtonPosition(false);
+
+        // Remove office switch button class at the same time
+        if (officeSwitchBtn) {
+          officeSwitchBtn.classList.remove('sidebar-open');
+        }
       }
 
       // Scroll to top
@@ -2230,11 +2250,17 @@ function updateOfficeSwitchButtonPosition(sidebarOpen) {
   const officeSwitchBtn = document.getElementById("office-switch-btn");
   if (!officeSwitchBtn) return;
 
-  // Toggle class for CSS to handle positioning
-  if (sidebarOpen) {
-    officeSwitchBtn.classList.add('sidebar-open');
-  } else {
-    officeSwitchBtn.classList.remove('sidebar-open');
+  const isMobile = window.innerWidth < 768;
+
+  // On mobile, ensure class matches sidebar state
+  // (toggle handler already sets this synchronously, but this ensures consistency)
+  if (isMobile) {
+    const hasClass = officeSwitchBtn.classList.contains('sidebar-open');
+    if (sidebarOpen && !hasClass) {
+      officeSwitchBtn.classList.add('sidebar-open');
+    } else if (!sidebarOpen && hasClass) {
+      officeSwitchBtn.classList.remove('sidebar-open');
+    }
   }
 }
 
