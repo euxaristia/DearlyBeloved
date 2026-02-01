@@ -73,6 +73,7 @@ Pre-requisites: Rust, Cargo, and Linux dev libraries (`webkit2gtk`, etc.).
    ```
 2. **Output**:
    - **Debian/Ubuntu**: `src-tauri/target/release/bundle/deb/*.deb`
+   - **Fedora/RHEL**: `src-tauri/target/release/bundle/rpm/*.rpm`
    - **Arch/Other**: `src-tauri/target/release/bundle/appimage/*.AppImage`
      - *Note:* If AppImage creation fails on Arch (common), you can run the raw binary directly: `src-tauri/target/release/app`
 
