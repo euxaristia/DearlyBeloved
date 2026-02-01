@@ -2058,9 +2058,12 @@ function setupSidebar() {
       sidebar.classList.toggle('open');
       sidebarBackdrop.classList.toggle('active');
       sidebarToggle.classList.toggle('sidebar-open');
-      
+
       // Update office switch button position
       updateOfficeSwitchButtonPosition(!wasOpen);
+
+      // Ensure consistency after toggle
+      setTimeout(() => ensureSidebarStateConsistency(), 50);
     } else {
       // Desktop: toggle collapse
       sidebar.classList.toggle('collapsed');
@@ -2133,6 +2136,9 @@ function setupSidebar() {
   window.addEventListener('resize', () => {
     const isMobile = window.innerWidth < 768;
 
+    // Ensure sidebar state is consistent
+    ensureSidebarStateConsistency();
+
     // Only update if we've crossed the mobile/desktop breakpoint
     if (isMobile !== lastIsMobile) {
       if (!isMobile) {
@@ -2161,6 +2167,9 @@ function setupSidebar() {
       lastIsMobile = isMobile;
     }
   });
+
+  // Ensure initial state is consistent
+  ensureSidebarStateConsistency();
 }
 
 // Set active sidebar item based on current office
@@ -2173,6 +2182,31 @@ function setActiveSidebarItem(office) {
       item.classList.remove('active');
     }
   });
+}
+
+// Helper function to ensure sidebar state consistency
+function ensureSidebarStateConsistency() {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+
+  if (!sidebar || !sidebarBackdrop || !sidebarToggle) return;
+
+  const isMobile = window.innerWidth < 768;
+  const sidebarIsOpen = sidebar.classList.contains('open');
+  const backdropIsActive = sidebarBackdrop.classList.contains('active');
+  const toggleIsOpen = sidebarToggle.classList.contains('sidebar-open');
+
+  // On mobile, all three should be in sync
+  if (isMobile) {
+    if (sidebarIsOpen !== backdropIsActive || sidebarIsOpen !== toggleIsOpen) {
+      // State mismatch detected - close everything to reset
+      sidebar.classList.remove('open');
+      sidebarBackdrop.classList.remove('active');
+      sidebarToggle.classList.remove('sidebar-open');
+      updateOfficeSwitchButtonPosition(false);
+    }
+  }
 }
 
 // Update office switch button position based on sidebar state
