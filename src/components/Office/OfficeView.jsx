@@ -6,6 +6,7 @@ import MorningPrayer from './MorningPrayer';
 import EveningPrayer from './EveningPrayer';
 import MiddayPrayer from './MiddayPrayer';
 import Compline from './Compline';
+import LectionaryView from './LectionaryView';
 
 export default function OfficeView() {
     const { currentOffice } = useApp();
@@ -23,6 +24,7 @@ export default function OfficeView() {
             {currentOffice === 'evening' && <EveningPrayer data={data} />}
             {currentOffice === 'midday' && <MiddayPrayer />}
             {currentOffice === 'compline' && <Compline />}
+            {currentOffice === 'lectionary' && <LectionaryView />}
         </div>
     );
 }

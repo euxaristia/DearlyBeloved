@@ -19,7 +19,7 @@ export default function Compline() {
                 <p className="prayer-text">
                     Brethren, be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh
                     about, seeking whom he may devour: whom resist, stedfast in the faith.{' '}
-                    <span className="rubric">1 St Peter 5. 8, 9.</span>
+                    <span className="rubric">1{'\u00A0'}St{'\u00A0'}Peter 5. 8, 9.</span>
                 </p>
 
                 <p className="prayer-text">O God, make speed to save us;</p>

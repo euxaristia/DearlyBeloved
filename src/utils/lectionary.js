@@ -405,6 +405,18 @@ export function getTodaysReadings() {
     return lectionary[month][day];
   }
   return null;
+  return null;
+}
+
+// Helper function to get readings for a specific date
+export function getReadingsForDate(date) {
+  const month = date.getMonth() + 1; // JavaScript months are 0-indexed
+  const day = date.getDate();
+
+  if (lectionary[month] && lectionary[month][day]) {
+    return lectionary[month][day];
+  }
+  return null;
 }
 
 // Helper function to parse a Bible reference
