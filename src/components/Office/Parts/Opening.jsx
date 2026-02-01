@@ -10,7 +10,10 @@ export default function Opening({ sentence }) {
 
             {sentence && (
                 <p className="prayer-text">
-                    {sentence.text} <span className="rubric">{sentence.citation}</span>
+                    {sentence.text}
+                    <span className="rubric" style={{ display: 'block', textAlign: 'right', fontSize: '0.9em', marginTop: '4px' }}>
+                        {sentence.citation}
+                    </span>
                 </p>
             )}
 
