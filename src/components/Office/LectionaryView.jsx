@@ -50,14 +50,14 @@ export default function LectionaryView() {
         return (
             <div className="lectionary-view">
                 <div className="date-nav">
-                    <button onClick={() => changeDate(-1)} className="nav-btn">←</button>
+                    <button onClick={() => changeDate(-1)} className="nav-btn">⬅️</button>
                     <input
                         type="date"
                         value={selectedDate}
                         onChange={handleDateChange}
                         className="date-picker-input"
                     />
-                    <button onClick={() => changeDate(1)} className="nav-btn">→</button>
+                    <button onClick={() => changeDate(1)} className="nav-btn">➡️</button>
                 </div>
                 <p className="rubric">No readings found for this date.</p>
             </div>
@@ -74,7 +74,7 @@ export default function LectionaryView() {
         <div className="lectionary-view">
             {/* Date Navigation Bar */}
             <div className="date-nav-bar">
-                <button onClick={() => changeDate(-1)} className="nav-arrow" aria-label="Previous Day">←</button>
+                <button onClick={() => changeDate(-1)} className="nav-arrow" aria-label="Previous Day">⬅️</button>
                 <div className="date-display">
                     <input
                         type="date"
@@ -87,7 +87,7 @@ export default function LectionaryView() {
                         {selectedDate} <Calendar className="calendar-icon" size={20} />
                     </label>
                 </div>
-                <button onClick={() => changeDate(1)} className="nav-arrow" aria-label="Next Day">→</button>
+                <button onClick={() => changeDate(1)} className="nav-arrow" aria-label="Next Day">➡️</button>
             </div>
 
             {/* Office Tabs */}
