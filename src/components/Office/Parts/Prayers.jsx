@@ -2,7 +2,7 @@ import React from 'react';
 import { officeContent } from '../../../data/officeContent';
 
 export default function Prayers({ collect, office }) {
-    const { suffrages, stChrysostom, grace } = officeContent.prayers;
+    const { suffrages, statePrayers, stChrysostom, grace } = officeContent.prayers;
 
     return (
         <>
@@ -57,6 +57,23 @@ export default function Prayers({ collect, office }) {
                         ? 'O Lord our heavenly Father, Almighty and everlasting God, who hast safely brought us to the beginning of this day: Defend us in the same with thy mighty power; and grant that this day we fall into no sin, neither run into any kind of danger; but that all our doings may be ordered by thy governance, to do always that is righteous in thy sight; through Jesus Christ our Lord. Amen.'
                         : 'Lighten our darkness, we beseech thee, O Lord; and by thy great mercy defend us from all perils and dangers of this night; for the love of thy only Son, our Saviour, Jesus Christ. Amen.'}
                 </p>
+            </div>
+
+            <div className="section">
+                <p className="rubric">
+                    Then shall be read one of the Prayers for the King, and the Prayer for the Clergy and People.
+                </p>
+
+                <h3 className="collect-title">{statePrayers.kingMajestyTitle}</h3>
+                <p className="prayer-text">{statePrayers.kingMajestyText}</p>
+
+                <p className="rubric">Or this:</p>
+
+                <h3 className="collect-title">{statePrayers.authorityTitle}</h3>
+                <p className="prayer-text">{statePrayers.authorityText}</p>
+
+                <h3 className="collect-title">{statePrayers.clergyTitle}</h3>
+                <p className="prayer-text">{statePrayers.clergyText}</p>
             </div>
 
             <div className="section">
