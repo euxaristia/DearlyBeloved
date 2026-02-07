@@ -51,6 +51,17 @@ export const collects = {
       text: "O Almighty God, who alone canst order the unruly wills and affections of sinful men; Grant unto thy people, that they may love the thing which thou commandest, and desire that which thou dost promise; that so, among the sundry and manifold changes of the world, our hearts may surely there be fixed, where true joys are to be found. Amen."
     }
   },
+  preLent: {
+    septuagesima: {
+      text: "O Lord, we beseech thee favourably to hear the prayers of thy people; that we, who are justly punished for our offences, may be mercifully delivered by thy goodness, for the glory of thy Name; through Jesus Christ our Saviour, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen."
+    },
+    sexagesima: {
+      text: "O Lord God, who seest that we put not our trust in any thing that we do; Mercifully grant that by thy power we may be defended against all adversity; through Jesus Christ our Lord. Amen."
+    },
+    quinquagesima: {
+      text: "O Lord, who hast taught us that all our doings without charity are nothing worth; Send thy Holy Ghost, and pour into our hearts that most excellent gift of charity, the very bond of peace and of all virtues, without which whosoever liveth is counted dead before thee. Grant this for thine only Son Jesus Christ's sake. Amen."
+    }
+  },
   lent: {
     ashWednesday: {
       text: "Almighty and everlasting God, who hatest nothing that thou hast made, and dost forgive the sins of all them that are penitent; Create and make in us new and contrite hearts, that we, worthily lamenting our sins, and acknowledging our wretchedness, may obtain of thee, the God of all mercy, perfect remission and forgiveness. Amen."
@@ -256,6 +267,13 @@ export function getCollectForDate(date) {
     return collects.afterTrinity[sundayNum]?.text || getGeneralCollect("afterTrinity");
   }
 
+  if (weekInfo.includes("Pre-Lent")) {
+    if (weekInfo.includes("Septuagesima")) return collects.preLent.septuagesima.text;
+    if (weekInfo.includes("Sexagesima")) return collects.preLent.sexagesima.text;
+    if (weekInfo.includes("Quinquagesima")) return collects.preLent.quinquagesima.text;
+    return getGeneralCollect("Pre-Lent");
+  }
+
   return getGeneralCollect(season);
 }
 
@@ -275,7 +293,8 @@ export function getGeneralCollect(season) {
     "Lent": "O Lord, who for our sake didst fast forty days in the wilderness. Amen.",
     "Eastertide": "O God, who for our redemption didst give thine only-begotten Son to die for our sins. Amen.",
     "Pentecost": "God, who didst teach the hearts of thy faithful people by the sending of the light of thy Holy Ghost. Amen.",
-    "after Trinity": "O God, the strength of all those that put their trust in thee. Amen."
+    "after Trinity": "O God, the strength of all those that put their trust in thee. Amen.",
+    "Pre-Lent": "O Lord, we beseech thee favourably to hear the prayers of thy people. Amen."
   };
 
   return generalCollects[season] || "Almighty God, who alone canst order the unruly wills and affections of sinful men. Amen.";

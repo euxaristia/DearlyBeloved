@@ -8,14 +8,15 @@ import './Layout.css';
 export default function Layout({ children }) {
     const { isSidebarOpen, currentOffice } = useApp();
 
+    const titles = {
+        morning: 'Morning Prayer',
+        midday: 'Midday Prayer',
+        evening: 'Evening Prayer',
+        compline: 'Compline',
+        lectionary: 'Lectionary'
+    };
+
     React.useEffect(() => {
-        const titles = {
-            morning: 'Morning Prayer',
-            midday: 'Midday Prayer',
-            evening: 'Evening Prayer',
-            compline: 'Compline',
-            lectionary: 'Lectionary'
-        };
         document.title = titles[currentOffice] || 'Common Prayer';
     }, [currentOffice]);
 
@@ -30,6 +31,7 @@ export default function Layout({ children }) {
                     <header>
                         <h1>Common Prayer</h1>
                         <p className="subtitle">The Daily Office</p>
+                        <h2 className="office-title-display">{titles[currentOffice]}</h2>
                     </header>
 
                     <main>

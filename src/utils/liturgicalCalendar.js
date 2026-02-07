@@ -60,7 +60,7 @@ function calculateEaster(year) {
 // Get days between two dates
 function daysBetween(date1, date2) {
     const oneDay = 24 * 60 * 60 * 1000;
-    return Math.round((date2 - date1) / oneDay);
+    return Math.floor((date2 - date1) / oneDay);
 }
 
 // Get the Sunday reference based on current day
@@ -168,6 +168,9 @@ export function getLiturgicalInfo(date) {
     const trinitySunday = new Date(pentecost);
     trinitySunday.setDate(pentecost.getDate() + 7);
 
+    const septuagesima = new Date(easter);
+    septuagesima.setDate(easter.getDate() - 63);
+
     let season = "";
     let weekInfo = "";
 
@@ -184,17 +187,30 @@ export function getLiturgicalInfo(date) {
         } else {
             weekInfo = getSundayReference(date, christmasDay, "Christmas Day");
         }
-    } else if (date >= epiphany && date < baptismOfLord) {
+    } else if (date >= epiphany && date < septuagesima) {
         season = "Epiphany";
-        weekInfo = getSundayReference(date, epiphany, "the Epiphany");
-    } else if (date >= baptismOfLord && date < ashWednesday) {
-        season = "after Epiphany";
-        // const epiphanySundays = getSundaysBetween(baptismOfLord, ashWednesday); // Unused
-        const currentSunday = getSundayNumber(baptismOfLord, date, ashWednesday);
-        if (currentSunday > 0) {
-            weekInfo = getSundayReference(date, null, `the ${getOrdinal(currentSunday)} Sunday after Epiphany`);
+        if (date >= baptismOfLord) {
+            season = "after Epiphany";
+            const currentSunday = getSundayNumber(baptismOfLord, date, septuagesima);
+            if (currentSunday > 0) {
+                weekInfo = getSundayReference(date, null, `the ${getOrdinal(currentSunday)} Sunday after Epiphany`);
+            } else {
+                weekInfo = getSundayReference(date, baptismOfLord, "the Baptism of Our Lord");
+            }
         } else {
-            weekInfo = getSundayReference(date, baptismOfLord, "the Baptism of Our Lord");
+            weekInfo = getSundayReference(date, epiphany, "the Epiphany");
+        }
+    } else if (date >= septuagesima && date < ashWednesday) {
+        season = "Pre-Lent";
+        const daysFromSept = daysBetween(septuagesima, date);
+        const weeksFromSept = Math.floor(daysFromSept / 7);
+
+        if (weeksFromSept === 0) {
+            weekInfo = getSundayReference(date, septuagesima, "Septuagesima Sunday");
+        } else if (weeksFromSept === 1) {
+            weekInfo = getSundayReference(date, null, "Sexagesima Sunday");
+        } else {
+            weekInfo = getSundayReference(date, null, "Quinquagesima Sunday");
         }
     } else if (date >= ashWednesday && date < easter) {
         season = "Lent";

@@ -69,6 +69,17 @@ header h1 {
     letter-spacing: 2px;
 }
 
+.office-title-display {
+    font-family: "Cinzel", serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-top: 10px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    display: inline-block;
+}
+
 /* Footer */
 footer {
     text-align: center;

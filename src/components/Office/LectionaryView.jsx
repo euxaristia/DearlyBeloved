@@ -9,9 +9,13 @@ import './LectionaryView.css';
 
 export default function LectionaryView() {
     // Initialize with today's date
+    // Initialize with today's date
     const [selectedDate, setSelectedDate] = useState(() => {
         const now = new Date();
-        return now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
     });
 
     const [activeTab, setActiveTab] = useState('morning'); // 'morning' or 'evening'

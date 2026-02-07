@@ -67,7 +67,7 @@ export default function LessonDisplay({ reference, lesson }) {
 
     return (
         <div className="lesson">
-            <p className="rubric">
+            <p className="prayer-text">
                 {formatLessonIntro(reference, lesson)}
             </p>
 
