@@ -267,7 +267,7 @@ export function getCollectForDate(date) {
     return collects.afterTrinity[sundayNum]?.text || getGeneralCollect("afterTrinity");
   }
 
-  if (weekInfo.includes("Pre-Lent")) {
+  if (season === "Pre-Lent" || weekInfo.includes("Septuagesima") || weekInfo.includes("Sexagesima") || weekInfo.includes("Quinquagesima")) {
     if (weekInfo.includes("Septuagesima")) return collects.preLent.septuagesima.text;
     if (weekInfo.includes("Sexagesima")) return collects.preLent.sexagesima.text;
     if (weekInfo.includes("Quinquagesima")) return collects.preLent.quinquagesima.text;
