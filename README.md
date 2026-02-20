@@ -111,6 +111,5 @@ This project is licensed under the GNU Affero General Public License v3.0 - see 
 ---
 
 **Original App Designed by [@euxaristia](https://github.com/euxaristia)**
-**Refactored & Modernized with [Antigravity](https://gemini.google.com)**
 
 Made in 🇨🇦 with ❤️ for 🇬🇧 🇺🇸 & 🌎

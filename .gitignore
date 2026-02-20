@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Tauri Android generated artifacts
+src-tauri/gen/android/.gradle-home/
+src-tauri/gen/android/app/src/main/assets/
+src-tauri/gen/android/app/*_build_err*.txt
+src-tauri/gen/android/app/tauri_help*.txt
