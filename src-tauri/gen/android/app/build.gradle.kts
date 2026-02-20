@@ -1,4 +1,5 @@
 import java.util.Properties
+import org.gradle.api.GradleException
 
 plugins {
     id("com.android.application")
@@ -93,6 +94,51 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+}
+
+val webDistDir = projectDir.resolve("../../../../dist")
+val androidAssetsDir = projectDir.resolve("src/main/assets")
+val tauriConfigSource = projectDir.resolve("../../../tauri.conf.json")
+
+val ensureWebDist by tasks.registering(Exec::class) {
+    group = "build"
+    description = "Builds the web app into dist/ when Android build runs from Android Studio."
+    workingDir = projectDir.resolve("../../../..")
+    commandLine("bun", "run", "build")
+    // Skip if dist already exists so repeat installs stay fast.
+    onlyIf { !webDistDir.exists() }
+}
+
+val syncWebAssets by tasks.registering {
+    group = "build"
+    description = "Copies built web assets from dist/ into Android assets."
+    dependsOn(ensureWebDist)
+    doLast {
+        if (!webDistDir.exists()) {
+            throw GradleException("Missing web dist at ${webDistDir.absolutePath}. Run `bun run build` first.")
+        }
+        copy {
+            from(webDistDir)
+            into(androidAssetsDir)
+        }
+
+        if (!tauriConfigSource.exists()) {
+            throw GradleException("Missing Tauri config at ${tauriConfigSource.absolutePath}.")
+        }
+        val tauriConfigText = tauriConfigSource
+            .readText()
+            .replace(Regex("\"devUrl\"\\s*:\\s*\"[^\"]*\""), "\"devUrl\": null")
+        androidAssetsDir.resolve("tauri.conf.json").writeText(tauriConfigText)
+    }
+}
+
+tasks.matching { it.name.startsWith("merge") && it.name.endsWith("Assets") }.configureEach {
+    dependsOn(syncWebAssets)
+    val variantName = name.removePrefix("merge").removeSuffix("Assets")
+    val rustTaskName = "rustBuild$variantName"
+    if (tasks.names.contains(rustTaskName)) {
+        dependsOn(rustTaskName)
+    }
 }
 
 apply(from = "tauri.build.gradle.kts")
