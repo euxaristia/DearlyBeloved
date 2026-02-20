@@ -18,7 +18,7 @@ const OfficeView: React.FC = () => {
 
     return (
         <div className="office-view">
-            <LiturgicalHeader info={data.liturgicalInfo} />
+            <LiturgicalHeader info={data.liturgicalInfo} date={data.currentDate} />
 
             {currentOffice === 'morning' && <MorningPrayer data={data} />}
             {currentOffice === 'evening' && <EveningPrayer data={data} />}

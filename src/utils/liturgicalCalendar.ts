@@ -205,7 +205,11 @@ export function getLiturgicalInfo(date: Date): LiturgicalInfo {
             weekInfo = "Ash Wednesday";
         } else {
             const sundaysBefore = getSundayNumber(ashWednesday, date, easter);
-            weekInfo = getSundayReference(date, `the ${getOrdinal(sundaysBefore)} Sunday in Lent`);
+            if (sundaysBefore === 0) {
+                weekInfo = getSundayReference(date, "Ash Wednesday");
+            } else {
+                weekInfo = getSundayReference(date, `the ${getOrdinal(sundaysBefore)} Sunday in Lent`);
+            }
         }
     } else if (date >= easter && date < pentecost) {
         season = "Eastertide";

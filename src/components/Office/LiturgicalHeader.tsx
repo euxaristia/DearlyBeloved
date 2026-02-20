@@ -2,14 +2,14 @@ import { LiturgicalInfo } from '../../types';
 
 interface LiturgicalHeaderProps {
     info: LiturgicalInfo;
+    date: Date;
 }
 
-export default function LiturgicalHeader({ info }: LiturgicalHeaderProps) {
+export default function LiturgicalHeader({ info, date }: LiturgicalHeaderProps) {
     if (!info) return null;
 
     const { weekInfo, saintDay } = info;
-    const now = new Date();
-    const dateString = now.toLocaleDateString("en-US", {
+    const dateString = date.toLocaleDateString("en-US", {
         weekday: "long",
         year: "numeric",
         month: "long",

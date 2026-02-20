@@ -17,13 +17,16 @@ interface LectionaryDataState {
 }
 
 export default function LectionaryView() {
+    const toLocalDateInputValue = (date: Date): string => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+
     // Initialize with today's date
     const [selectedDate, setSelectedDate] = useState<string>(() => {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return toLocalDateInputValue(new Date());
     });
 
     const [activeTab, setActiveTab] = useState<'morning' | 'evening'>('morning');
@@ -55,7 +58,7 @@ export default function LectionaryView() {
         const [year, month, day] = selectedDate.split('-').map(Number);
         const dateObj = new Date(year, month - 1, day);
         dateObj.setDate(dateObj.getDate() + days);
-        setSelectedDate(dateObj.toISOString().split('T')[0]);
+        setSelectedDate(toLocalDateInputValue(dateObj));
     };
 
     if (!data || !data.readings) {
