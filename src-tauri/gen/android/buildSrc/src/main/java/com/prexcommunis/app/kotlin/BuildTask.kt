@@ -56,10 +56,6 @@ abstract class BuildTask : DefaultTask() {
             assetsDir.deleteRecursively()
             assetsDir.mkdirs()
             distDir.copyRecursively(assetsDir, overwrite = true)
-            
-            // Critical for Android to load local assets instead of trying localhost
-            val assetConfig = File(assetsDir, "tauri.conf.json")
-            assetConfig.writeText("{\"build\": {\"devUrl\": \"\"}}")
         }
 
         // 3. Force standalone mode in tauri.properties
@@ -89,40 +85,28 @@ abstract class BuildTask : DefaultTask() {
 
         project.logger.lifecycle("Building Rust library for target $cargoTarget...")
 
-        // Temporarily modify tauri.conf.json to disable devUrl and beforeBuildCommand during compilation
-        val configFile = File(workingDir, "tauri.conf.json")
-        val originalConfig = if (configFile.exists()) configFile.readText() else null
-        
-        if (originalConfig != null) {
-            val modifiedConfig = originalConfig
-                .replace(Regex("\"devUrl\"\\s*:\\s*\"[^\"]*\""), "\"devUrl\": \"\"")
-                .replace(Regex("\"beforeBuildCommand\"\\s*:\\s*\"[^\"]*\""), "\"beforeBuildCommand\": \"\"")
-            configFile.writeText(modifiedConfig)
-        }
+        execOperations.exec {
+            workingDir(workingDir)
+            executable("cargo")
+            args("build", "--verbose")
+            // Build Rust in release mode for Android debug variants too, so Tauri mobile
+            // does not compile with `cfg(dev)` and attempt localhost proxy loading.
+            args("--release")
+            args("--target", cargoTarget)
 
-        try {
-            execOperations.exec {
-                workingDir(workingDir)
-                executable("cargo")
-                args("build", "--verbose")
-                if (release == true) args("--release")
-                args("--target", cargoTarget)
-                
-                environment("CARGO_TARGET_${cargoTarget.uppercase().replace("-", "_")}_LINKER", linker.absolutePath)
-                environment("TAURI_PLATFORM", "android")
-                environment("TAURI_ARCH", tTarget)
-                environment("TAURI_FAMILY", "unix")
-                environment("TAURI_ENV_DEBUG", "false")
-                environment("TAURI_ENV_RELEASE", "true")
-            }.assertNormalExitValue()
-        } finally {
-            if (originalConfig != null) {
-                configFile.writeText(originalConfig)
-            }
-        }
+            environment("CARGO_TARGET_${cargoTarget.uppercase().replace("-", "_")}_LINKER", linker.absolutePath)
+            environment("TAURI_PLATFORM", "android")
+            environment("TAURI_ARCH", tTarget)
+            environment("TAURI_FAMILY", "unix")
+            environment("TAURI_ENV_DEBUG", "false")
+            environment("TAURI_ENV_RELEASE", "true")
+        }.assertNormalExitValue()
 
-        val profile = if (release == true) "release" else "debug"
+        val profile = "release"
         val builtLib = File(workingDir, "target/$cargoTarget/$profile/libapp_lib.so")
+        if (!builtLib.exists()) {
+            throw GradleException("Rust output not found at ${builtLib.absolutePath}")
+        }
         val destDir = File(project.projectDir, "src/main/jniLibs/$abiFolder")
         destDir.mkdirs()
         builtLib.copyTo(File(destDir, "libapp_lib.so"), overwrite = true)

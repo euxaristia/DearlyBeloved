@@ -5,13 +5,15 @@
   "identifier": "com.prexcommunis.app",
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:5173",
+    "devUrl": null,
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build"
   },
   "app": {
     "windows": [
       {
+        "label": "main",
+        "url": "index.html",
         "title": "Common Prayer",
         "width": 800,
         "height": 600,
@@ -21,6 +23,12 @@
     ],
     "security": {
       "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "**"
+        ]
+      },
       "capabilities": [
         "default"
       ]
