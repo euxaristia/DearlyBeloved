@@ -25,10 +25,10 @@ val hasAndroidSigning = !androidKeystoreFile.isNullOrBlank()
 
 android {
     compileSdk = 36
-    namespace = "com.prexcommunis.app"
+    namespace = "com.dearlybeloved.app"
     defaultConfig {
         manifestPlaceholders["usesCleartextTraffic"] = "false"
-        applicationId = "com.prexcommunis.app"
+        applicationId = "com.dearlybeloved.app"
         minSdk = 24
         targetSdk = 36
         versionCode = tauriProperties.getProperty("tauri.android.versionCode", "1").toInt()

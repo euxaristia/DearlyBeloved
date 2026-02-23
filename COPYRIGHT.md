@@ -2,7 +2,7 @@
 
 ## Summary
 
-**PrexCommunis uses exclusively public domain materials and original code.** There are no copyright violations. All liturgical content, Bible text, and data are in the public domain or explicitly licensed. The application code is licensed under the GNU Affero General Public License v3.0 (AGPLv3).
+**DearlyBeloved uses exclusively public domain materials and original code.** There are no copyright violations. All liturgical content, Bible text, and data are in the public domain or explicitly licensed. The application code is licensed under the GNU Affero General Public License v3.0 (AGPLv3).
 
 ---
 
@@ -33,6 +33,9 @@ The 1962 Canadian BCP, while traditional, is still under copyright protection by
 - Versicles and responses
 - Canticles (Te Deum, Benedictus, Magnificat, Nunc Dimittis)
 - Rubrics (all instructional text in original 1662 form)
+
+**Data Source:**
+- Original 1662 BCP documents (Public Domain)
 
 ### 2. King James Version (1611) Bible Text
 
@@ -187,6 +190,7 @@ All opening sentences are either:
 
 ❌ **1962 Canadian BCP** - Still under copyright by Anglican Church of Canada
 ❌ **1979/2007 Book of Common Prayer** - Still under copyright by Episcopal Church/Church Publishing
+❌ **1662 BCP: International Edition (2021)** - Samuel L. Bray & Drew Nathaniel Keane, IVP Academic
 ❌ **NRSV, ESV, NASB, NIV Bible Translations** - All under copyright
 ❌ **Modern Hymnal Content** - Most modern music and hymn texts are copyrighted
 ❌ **Proprietary Lectionary Systems** - Any commercial lectionary databases
@@ -222,7 +226,7 @@ Under US copyright law (and equivalent laws in UK, Canada, etc.):
 
 All content is either:
 1. **Public Domain** (1662 BCP, 1611 KJV, traditional prayers, ancient liturgies)
-2. **Originally Created** (application code, BSD 3-Clause)
+2. **Originally Created** (application code, AGPLv3)
 3. **Properly Licensed** (bible-api.com provides public domain KJV)
 
 There are no copyright violations, licensing conflicts, or legal concerns with using or distributing this application.
@@ -231,4 +235,4 @@ There are no copyright violations, licensing conflicts, or legal concerns with u
 
 **If you have specific concerns about any particular component, please raise them and they can be addressed.**
 
-Last Updated: January 25, 2026
+Last Updated: February 23, 2026

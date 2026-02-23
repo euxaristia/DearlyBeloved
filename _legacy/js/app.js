@@ -311,18 +311,6 @@ const prayerData = {
                         </p>
                     </div>
 
-                    <p class="rubric">Or this:</p>
-
-                    <div class="collect">
-                        <p class="collect-title">A Prayer for Those in Authority.</p>
-                        <p class="prayer-text">
-                            Almighty Father, whose kingdom is everlasting: We beseech thee of thy mercy to direct and prosper the counsels of all those who bear authority in this land, that in humility and honesty they may faithfully serve the people committed to their charge. And grant, we pray thee, that religion and piety, peace and unity, truth and justice, may be established among us for all generations, through Jesus Christ our Lord. <span class="response">Amen.</span>
-                        </p>
-                        <p class="copyright-notice" style="font-size: 0.7em; font-style: italic; color: #888; margin-top: -12px; margin-bottom: 0;">
-                            Taken from The 1662 Book of Common Prayer: International Edition (IVP Academic 2021). All rights to new material and updated language reserved.
-                        </p>
-                    </div>
-
                     <div class="collect">
                         <p class="collect-title">A Prayer for the Clergy and People.</p>
                         <p class="prayer-text">
@@ -615,18 +603,6 @@ const prayerData = {
                         <p class="collect-title">A Prayer for the King's Majesty.</p>
                         <p class="prayer-text">
                             O Lord our heavenly Father, high and mighty, King of kings, Lord of lords, the only Ruler of princes, who dost from thy throne behold all the dwellers upon earth: Most heartily we beseech thee with thy favour to behold our most gracious Sovereign Lord, King Charles; and so replenish him with the grace of thy Holy Spirit, that he may alway incline to thy will, and walk in thy way: Endue him plenteously with heavenly gifts; grant him in health and wealth long to live; strengthen him that he may vanquish and overcome all his enemies, and finally after this life he may attain everlasting joy and felicity; through Jesus Christ our Lord. <span class="response">Amen.</span>
-                        </p>
-                    </div>
-
-                    <p class="rubric">Or this:</p>
-
-                    <div class="collect">
-                        <p class="collect-title">A Prayer for Those in Authority.</p>
-                        <p class="prayer-text">
-                            Almighty Father, whose kingdom is everlasting: We beseech thee of thy mercy to direct and prosper the counsels of all those who bear authority in this land, that in humility and honesty they may faithfully serve the people committed to their charge. And grant, we pray thee, that religion and piety, peace and unity, truth and justice, may be established among us for all generations, through Jesus Christ our Lord. <span class="response">Amen.</span>
-                        </p>
-                        <p class="copyright-notice" style="font-size: 0.7em; font-style: italic; color: #888; margin-top: -12px; margin-bottom: 0;">
-                            Taken from The 1662 Book of Common Prayer: International Edition (IVP Academic 2021). All rights to new material and updated language reserved.
                         </p>
                     </div>
 
@@ -1501,8 +1477,8 @@ function showNotification(title, office) {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification(`Time for ${title}`, {
         body: "Open Common Prayer to pray the Daily Office.",
-        icon: "/PrexCommunis/icon.svg",
-        badge: "/PrexCommunis/icon.svg",
+        icon: "/DearlyBeloved/icon.svg",
+        badge: "/DearlyBeloved/icon.svg",
         tag: office,
         requireInteraction: false,
         vibrate: [200, 100, 200],
@@ -1515,7 +1491,7 @@ function showNotification(title, office) {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/PrexCommunis/service-worker.js")
+      .register("/DearlyBeloved/service-worker.js")
       .then((registration) => {
         console.log("Service Worker registered:", registration);
 

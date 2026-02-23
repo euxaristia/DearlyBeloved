@@ -71,11 +71,6 @@ export default function Prayers({ collect, office }: PrayersProps) {
                 <h3 className="collect-title">{statePrayers.kingMajestyTitle}</h3>
                 <p className="prayer-text">{statePrayers.kingMajestyText}</p>
 
-                <p className="rubric">Or this:</p>
-
-                <h3 className="collect-title">{statePrayers.authorityTitle}</h3>
-                <p className="prayer-text">{statePrayers.authorityText}</p>
-
                 <h3 className="collect-title">{statePrayers.clergyTitle}</h3>
                 <p className="prayer-text">{statePrayers.clergyText}</p>
             </div>

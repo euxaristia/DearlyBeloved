@@ -52,8 +52,8 @@ This project has been migrated from vanilla JavaScript to a modern stack:
 ### Web / Local Development
 1. **Clone**:
    ```bash
-   git clone https://github.com/PrexCommunis/prexcommunis.github.io.git
-   cd prexcommunis.github.io
+   git clone https://github.com/DearlyBeloved/dearlybeloved.github.io.git
+   cd dearlybeloved.github.io
    ```
 2. **Install**:
    ```bash

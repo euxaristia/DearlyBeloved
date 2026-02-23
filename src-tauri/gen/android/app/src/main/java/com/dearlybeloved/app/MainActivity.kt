@@ -1,4 +1,4 @@
-package com.prexcommunis.app
+package com.dearlybeloved.app
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

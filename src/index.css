@@ -165,6 +165,14 @@ main {
   font-style: italic;
 }
 
+.copyright-notice {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
 .indent {
   padding-left: 40px;
 }
